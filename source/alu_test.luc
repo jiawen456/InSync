@@ -1,0 +1,139 @@
+module alu_test (
+    input clk,
+    input rst,
+    input alufn[6],
+    input start_button, 
+    input error_mode,
+    output display_seg [8],
+    output display_sel [4],
+    output out[3][8]
+    
+  ) {
+  
+  sig test_out[3][8];       
+  sig test_display[4][5]; 
+  sig test_status[2];      
+  
+  const MAX_TEST_CASES = 16;
+  // to set the maximum number of test cases each test suite can have
+  
+  const SIZE_TEST_CASES = $clog2(MAX_TEST_CASES);
+  // to determine the number of bits needed for test suite
+  
+  .clk(clk) {
+    edge_detector edge_detector(#RISE(1), #FALL(0));
+    button_conditioner button_cond;
+    
+    counter ctr(#SIZE(SIZE_TEST_CASES),#DIV(26));
+    // initialise a counter which is based from built-in components
+    // DIV(26) means the counter increments every 2^26 clock cycles
+    
+    .rst(rst) {
+      fsm state = {IDLE,CHECK,DONE,ERROR};
+      dff blink[25];
+      multi_seven_seg display;
+    }  
+  }
+  
+  .char(ctr.value) {
+    adder_test adder_test(.clk(clk), .rst(rst), .error_mode(error_mode));
+    boole_test boole_test;
+    shift_test shift_test;
+    compare_test compare_test;
+    
+    
+  }
+  // initialise all test suites, with input char = current value of counter
+  
+  always {
+  
+    button_cond.in = start_button;          // center io button input to button_conditioner
+    edge_detector.in = button_cond.out;     // which inputs to the edge_detector
+    
+    ctr.rst = 0;    // initialise counter rst to 0
+        
+    out = 3x{{8b0}};
+    display.values = {5d0,5d0,5d0,5d0}; 
+    display_seg = display.seg;    // connect segments from multi_seven_seg to output
+    display_sel = display.sel;    // connect digit select from multi_seven_seg to output 
+    
+    
+    case(state.q) {
+    
+      state.IDLE:
+        out = 3x{{8b0}};
+        display.values = {5d1,5d13,5d17,5d14}; // display IDLE
+        
+        if (edge_detector.out) {
+          ctr.rst = 1;
+          state.d = state.CHECK;
+        }
+        // when the center button is pressed, the counter will reset and go to CHECK state
+        
+      state.CHECK:
+        case(alufn[5:4]) {
+        // the test suite is selected based on switches
+        
+          2b00: 
+            test_out = adder_test.out;
+            test_status = adder_test.status;
+            test_display = adder_test.test_display;
+          
+          2b01: 
+            test_out = boole_test.out;
+            test_status = boole_test.status;
+            test_display = boole_test.test_display; 
+          
+          2b10: 
+            test_out = shift_test.out;
+            test_status = shift_test.status;
+            test_display = shift_test.test_display;  
+          
+          2b11: 
+            test_out = compare_test.out;
+            test_status = compare_test.status;
+            test_display = compare_test.test_display;       
+            
+          default: 
+            test_out = 3x{{8b0}};
+            test_status = 0;
+            test_display = 4x{{5d0}};
+        }
+        
+        if (test_status == 2) {
+          state.d = state.DONE;
+        }          
+        if (test_status == 1) {
+          out = test_out;
+          display.values = test_display;
+        }
+        if (test_status == 0) {
+          state.d = state.ERROR;
+        } 
+        // test status 2: the test is completed
+        // test status 1: the current test case is correct
+        // test status 0: the current test case is wrong
+        
+      state.DONE:
+        out = 3x{{8b0}};
+        display.values = {5d13,5d0,5d18,5d14}; // display done
+        
+        if (edge_detector.out) {
+          state.d = state.IDLE;
+        }
+        // when the center button is pressed, the counter will reset and go back to IDLE state
+                  
+      state.ERROR:
+        blink.d = blink.q + 1;
+        out = 3x{{8x{~blink.q[24]}}};
+        display.values = {5d14,5d20,5d20,5d23}; // display Err
+        if (edge_detector.out) {
+          state.d = state.IDLE;
+        }
+        // when the center button is pressed, the counter will reset and go back to IDLE state
+      
+      default:
+        out = 3x{{8b0}};
+    }        
+  }  
+}

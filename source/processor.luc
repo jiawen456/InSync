@@ -1,0 +1,232 @@
+module processor (
+    input clk,  // clock
+    input rst,  // reset
+    input button[5],
+    input start_button,
+    input reset_button,
+    output display_seg0,
+    output display_seg1,
+    output display_seg2,
+    output display_seg3,
+    output out[25]
+  ) {
+  
+  sig old_map[25];
+  sig current_map[25];
+  sig current_cursor[25];
+  sig current_score[8];
+  sig current_highscore[8];
+  sig completed;
+  sig direction[2];
+  sig pos[25];
+  
+  .clk(clk) {
+    edge_detector left_btn(#RISE(1), #FALL(0));
+    button_conditioner left_btn_cond;
+    
+    edge_detector right_btn(#RISE(1), #FALL(0));
+    button_conditioner right_btn_cond;
+    
+    edge_detector up_btn(#RISE(1), #FALL(0));
+    button_conditioner up_btn_cond;
+    
+    edge_detector down_btn(#RISE(1), #FALL(0));
+    button_conditioner down_btn_cond;
+    
+    edge_detector enter_btn(#RISE(1), #FALL(0));
+    button_conditioner enter_btn_cond;
+    
+    edge_detector start_btn(#RISE(1), #FALL(0));
+    button_conditioner start_btn_cond;
+    
+    edge_detector reset_btn(#RISE(1), #FALL(0));
+    button_conditioner reset_btn_cond;
+    
+    counter reset_ctr(#SIZE(4),#DIV(30));
+    
+    
+    .rst(rst) {
+      fsm state = {IDLE,GENMAP,PLAYING,RESET,CURSOR,TOGGLE,DONE};
+      dff blink[25];
+      
+      gen_map gen_map;
+      toggle_map toggle_map;
+      shift_cursor shift_cursor;
+      
+    }
+  }
+  
+  decimal2 decimal_score;
+  decimal2 decimal_highscore;
+  
+  seven_seg sevenseg3; // led segment 3
+  seven_seg sevenseg2; // led segment 2
+  seven_seg sevenseg1; // led segment 1
+  seven_seg sevenseg0; // led segment 0
+  
+  always {
+    
+    left_btn_cond.in = button[0];
+    left_btn.in = left_btn_cond.out;
+    
+    right_btn_cond.in = button[1];
+    right_btn.in = right_btn_cond.out;
+    
+    up_btn_cond.in = button[2];
+    up_btn.in = up_btn_cond.out;
+    
+    down_btn_cond.in = button[3];
+    down_btn.in = down_btn_cond.out;
+    
+    enter_btn_cond.in = button[4];
+    enter_btn.in = enter_btn_cond.out;
+    
+    start_btn_cond.in = start_button;
+    start_btn.in = start_btn_cond.out;
+    
+    reset_btn_cond.in = reset_button;
+    reset_btn.in = reset_btn_cond.out;
+    
+    reset_ctr.rst = 0;
+    
+    current_highscore = 8b0;
+    current_score = 8b0;
+    current_cursor = 25b0;
+    current_map = 25b0;
+    old_map = 25b0;
+    direction = 2b0;
+    
+    toggle_map.current_cursor = current_cursor;
+    toggle_map.current_map = current_map;
+    
+    shift_cursor.direction = direction;
+    shift_cursor.current_cursor = current_cursor;
+    
+    decimal_highscore.a = 8b01100011;
+    decimal_score.a = 8b0;
+    
+    case(state.q) {
+      
+      state.IDLE:
+        out = 25b0;
+        
+        if (start_btn.out) {
+          state.d = state.GENMAP;
+        }
+      
+      state.GENMAP:
+        current_map = gen_map.out;
+        old_map = current_map;
+        state.d = state.PLAYING;
+      
+      state.PLAYING:
+        out = current_map;
+        
+        if (reset_btn.out) {
+          state.d = state.RESET;
+        }
+        
+        if (enter_btn.out) {
+          state.d = state.TOGGLE;
+        }
+        
+        if (up_btn.out) {
+          direction = 0;
+          state.d = state.CURSOR;
+        }
+        
+        if (down_btn.out) {
+          direction = 1;
+          state.d = state.CURSOR;
+        }
+        
+        if (left_btn.out) {
+          direction = 2;
+          state.d = state.CURSOR;
+        }
+        
+        if (right_btn.out) {
+          direction = 3;
+          state.d = state.CURSOR;
+        }
+        
+        if (start_btn.out) {
+          state.d = state.IDLE;
+        }
+      
+      state.RESET:
+        out = old_map;
+        current_map = old_map;
+        state.d = state.PLAYING;
+      
+      state.TOGGLE:
+        toggle_map.current_map = current_map;
+        toggle_map.current_cursor = current_cursor;
+        
+        completed = toggle_map.completed;
+        current_map = toggle_map.out;
+        out = current_map;
+        
+        current_score = current_score + 8b1;
+        
+        if (completed == 0) {
+          state.d = state.PLAYING;
+        }
+        
+        if (completed == 1) {
+          reset_ctr.rst = 1;
+          state.d = state.DONE;
+        }
+      
+      state.CURSOR:
+        shift_cursor.direction = direction;
+        shift_cursor.current_cursor = current_cursor;
+        
+        current_cursor = shift_cursor.out;
+        
+        state.d = state.PLAYING;
+      
+      state.DONE:
+        blink.d = blink.q + 1;
+        out = 25x{~blink.q[24]};
+        
+        current_highscore = current_score;
+        
+        if (start_btn.out) {
+          current_cursor = 25b1;
+          current_map = 25b0;
+          state.d = state.IDLE;
+        }
+        
+        if (reset_btn.out) {
+          state.d = state.RESET;
+        }
+        
+        // after some time, if player did not reset, reset by itself
+        if (reset_ctr.value == 15) {
+          state.d = state.IDLE;
+        }
+      
+      default:
+        out = 25b0;
+    }
+    
+    blink.d = blink.q + 1;
+    out = current_map;
+    pos = $clog2(current_cursor);
+    out[pos] = blink.q[24];
+    
+    sevenseg3.char = decimal_highscore.out1;
+    sevenseg2.char = decimal_highscore.out0;
+    sevenseg1.char = decimal_score.out1;
+    sevenseg0.char = decimal_score.out0;
+    
+    display_seg0 = ~sevenseg0.segs; 
+    display_seg1 = ~sevenseg1.segs;
+    display_seg2 = ~sevenseg2.segs;          
+    display_seg3 = ~sevenseg3.segs;
+    
+    
+    
+  }
+}

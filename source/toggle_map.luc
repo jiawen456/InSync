@@ -1,0 +1,17 @@
+module toggle_map (
+    input clk,  // clock
+    input rst,  // reset
+    input current_map[25],
+    input current_cursor[25],
+    output completed,
+    output out
+  ) {
+
+  always {
+    completed = b0;
+    if (current_map == 25b0) {
+      completed = b1;
+    }
+    out = current_map + current_cursor;
+  }
+}

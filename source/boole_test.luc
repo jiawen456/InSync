@@ -1,0 +1,109 @@
+module boole_test (
+    input char[4],
+    output out[3][8],
+    output test_display[4][5],
+    output status[2]
+   
+  ) {
+ 
+  const LAST_CASE = 7; // to easily change the last case in the test cases
+  
+  boole boole;
+  
+  sig test_a[8];
+  sig test_b[8];
+  sig test_alufn[6];
+  sig test_out[8];
+  
+  always {
+    boole.a = 8b0;
+    boole.b = 8b0;
+    boole.alufn = 6b0;
+    test_display = {5d0,5d0,5d0,5d0};
+    status = 0;
+    out = 3x{{8b0}};
+    
+    case(char) {
+      0: // test 01011010 AND 01010101
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b1000;       // AND
+        test_out = 8b01010000;
+        test_display = {5d11,5d17,5d0,5d1}; // display bL01
+        
+      1: // test 01011010 OR 01010101
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b1110;       // OR
+        test_out = 8b01011111;
+        test_display = {5d11,5d17,5d0,5d2}; // display bL02
+        
+      2: // test 01011010 XOR 01010101
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b0110;       // XOR
+        test_out = 8b00001111;
+        test_display = {5d11,5d17,5d0,5d3}; // display bL03
+        
+      3: // test 01011010, 01010101 return "A" only
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b1010;       // "A"
+        test_out = 8b01011010;
+        test_display = {5d11,5d17,5d0,5d4}; // display bL04
+        
+      4: // test 01011010 NAND 01010101
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b0111;       // NAND
+        test_out = 8b10101111;
+        test_display = {5d11,5d17,5d0,5d5}; // display bL05
+        
+      5: // test 01011010 NOR 01010101
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b0001;       // NOR
+        test_out = 8b10100000;
+        test_display = {5d11,5d17,5d0,5d6}; // display bL06
+        
+      6: // test 01011010 XNOR 01010101
+        test_a = 8b01011010;
+        test_b = 8b01010101;
+        test_alufn = 6b1001;       // XNOR
+        test_out = 8b11110000;
+        test_display = {5d11,5d17,5d0,5d7}; // display bL07
+        
+      7:
+        test_a = 8b0;
+        test_b = 8b0;
+ test_alufn = 6b0;
+        test_out = 8b0;
+        
+        // the last case is set to default as it is only used to mark the end of test cases
+        
+      default:
+        test_a = 8b0;
+        test_b = 8b0;
+ test_alufn = 6b0;
+        test_out = 8b0;
+    } 
+     
+      boole.a = test_a;           // input test_a as a into boole
+      boole.b = test_b;           // input test_b as b into boole
+      boole.alufn = test_alufn;   // input test_alufn as alufn into boole
+
+      if (boole.out == test_out) {
+        out = c{{test_out},{test_b},{test_a}}; 
+        // LEDs on the IO shield to light up according to test values, output, a, and b, from left to right respectively
+      
+        status = 1;     
+        // status 1 means that the test case is successful
+      }
+    
+      if (char == LAST_CASE) {
+        status = 2;
+        // status 2 means that the test cases has finished running
+      }   
+    } 
+    
+}

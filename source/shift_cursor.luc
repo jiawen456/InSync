@@ -1,0 +1,12 @@
+module shift_cursor (
+    input clk,  // clock
+    input rst,  // reset
+    input direction[2],
+    input current_cursor[25],
+    output out
+  ) {
+
+  always {
+    out = current_cursor + 1;
+  }
+}

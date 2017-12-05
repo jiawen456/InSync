@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/gen_map_19.v" Line 16: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" Line 23: Result of <arg fmt="%d" index="1">25</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_cursor_21.v" Line 18: Result of <arg fmt="%d" index="1">25</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 22: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 26: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 30: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 34: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 38: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 42: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 46: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 50: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 54: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 58: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="78" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/processor_2.v" Line 348: <arg fmt="%s" index="1">non constant math functions</arg> is not yet supported for synthesis
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:/50.002-Computation-Structure/Mojo/InSync/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/processor_2.v" Line 7: Empty module &lt;<arg fmt="%s" index="1">processor_2</arg>&gt; remains a black box.
+</msg>
+
+</messages>
+
