@@ -1,0 +1,10 @@
+module gen_map_temp (
+    input clk,  // clock
+    input rst,  // reset
+    output out[25]
+  ) {
+
+  always {
+    out = 25b100000000000;
+  }
+}

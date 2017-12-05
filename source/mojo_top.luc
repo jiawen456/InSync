@@ -60,19 +60,19 @@ module mojo_top (
     case(seven_seg_ctr.value){
       0:
         io_seg =~processor.display_seg0; 
-        io_sel = ~4b1;
+        io_sel = 4b1;
       1: 
         io_seg=~processor.display_seg1;
-        io_sel = ~4b10;
+        io_sel = 4b10;
       2:
         io_seg =~processor.display_seg2;          
-        io_sel = ~4b100;
+        io_sel = 4b100;
       3: 
         io_seg=~processor.display_seg3;
-        io_sel = ~4b1000;
+        io_sel = 4b1000;
       default:
         io_seg=~processor.display_seg0;
-        io_sel = ~4b1;                
+        io_sel = 4b1;                
     }
        
   }     

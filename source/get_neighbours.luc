@@ -1,0 +1,151 @@
+module get_neighbours (
+    input clk,  // clock
+    input rst,  // reset
+    input cursor[25],
+    output up[25],
+    output down[25],
+    output left[25],
+    output right[25]
+  ) {
+  
+  .clk(clk),.rst(rst) {
+    dff ctr[2];
+  }
+  
+  alu alu;
+  
+  const HORI = 4; // step amount in horizontal direction
+  const VERT = 3; // step amount in vertical direction
+  
+  sig up_temp[25];
+  sig down_temp[25];
+  sig left_temp[25];
+  sig right_temp[25];
+  
+  always {
+    
+    alu.a = 25b0;
+    alu.b = 25b0;
+    alu.alufn = 25b0;
+    
+    up_temp = 25b0;
+    down_temp = 25b0;
+    left_temp = 25b0;
+    right_temp = 25b0;
+    
+    case(ctr.q) {
+      
+      0:
+        alu.a = cursor;
+        alu.b = VERT;
+        alu.alufn = 6b100001; //SHR
+        up_temp = alu.out;
+      
+      1:
+        alu.a = cursor;
+        alu.b = VERT;
+        alu.alufn = 6b100000; //SHL
+        down_temp = alu.out;
+      
+      2:
+        alu.a = cursor;
+        alu.b = HORI;
+        alu.alufn = 6b100001; //SHR
+        left_temp = alu.out;
+      
+      3:
+        alu.a = cursor;
+        alu.b = HORI;
+        alu.alufn = 6b100000; //SHL
+        right_temp = alu.out;
+      
+      default:
+        alu.a = 25b0;
+        alu.b = 25b0;
+        alu.alufn = 6b0;
+      
+    }
+    
+    // set the edges to 25b0
+    case ($clog2(cursor)) {
+      
+      0:
+        up = 25b0;
+        down = 25b0;
+        left = left_temp;
+        right = 25b0;
+      
+      1:
+        up = up_temp;
+        down = 25b0;
+        left = left_temp;
+        right = 25b0;
+      
+      2:
+        up = up_temp;
+        down = 25b0;
+        left = left_temp;
+        right = 25b0;
+      
+      3:
+        up = up_temp;
+        down = 25b0;
+        left = 25b0;
+        right = 25b0;
+      
+      7:
+        up = 25b0;
+        down = down_temp;
+        left = left_temp;
+        right = 25b0;
+      
+      10:
+        up = up_temp;
+        down = 25b0;
+        left = 25b0;
+        right = right_temp;
+      
+      14:
+        up = 25b0;
+        down = down_temp;
+        left = left_temp;
+        right = 25b0;
+      
+      17:
+        up = up_temp;
+        down = 25b0;
+        left = 25b0;
+        right = right_temp;
+      
+      21:
+        up = 25b0;
+        down = down_temp;
+        left = 25b0;
+        right = 25b0;
+      
+      22:
+        up = 25b0;
+        down = down_temp;
+        left = 25b0;
+        right = right_temp;
+      
+      23:
+        up = 25b0;
+        down = down_temp;
+        left = 25b0;
+        right = right_temp;
+      
+      24:
+        up = 25b0;
+        down = down_temp;
+        left = 25b0;
+        right = right_temp;
+      
+      default:
+        up = up_temp;
+        down = down_temp;
+        left = left_temp;
+        right = right_temp;
+    }
+  }
+}

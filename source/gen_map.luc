@@ -1,10 +1,69 @@
 module gen_map (
     input clk,  // clock
     input rst,  // reset
-    output out
+    output out[25]
   ) {
-
+  
+  const MAXVISIT = 25;
+  
+  var visitCount;
+  
+  sig temp[32];
+  sig toggle[25];
+  sig toggleAt[25];
+  sig pointer[25];
+  sig mapout[25];
+  
+  .clk(clk),.rst(rst){
+    pn_gen randNo;
+    toggle_map toggle_map;
+  }
+  
+  alu alu;
+  
   always {
-    out = 25b10000;
+    pointer = 25b1; // initialize a pointer number that points to the LED index 0-24 (just a number)
+    mapout = 25b0; // initializing the output map
+    randNo.seed = 128h843233523a613966423b622562592c62; // copied from the component otherwise they say not initialized or sth
+    toggle_map.map = 25b0;
+    
+    for (visitCount =0; visitCount<MAXVISIT;visitCount++){
+      randNo.next = 1; // should generate a new number in randNo.num
+      temp = 2h00; // just a temp holder
+      temp = randNo.num; // take the 2 lsbs
+      
+      if (temp < 128){ // pseudo-random
+        toggleAt = 25b00;
+      } else {
+        toggleAt = 25b1;
+      }
+      
+      alu.alufn = 100000; // shift the toggle bit to the position pointer
+      alu.a = toggleAt;
+      alu.b = pointer;
+      toggleAt = alu.out;
+      
+      toggle_map.cursor = toggleAt; // get the toggle mask from togglemap module
+      toggle = toggle_map.out;
+      
+      alu.alufn = 010110; // XOR with the mapout to generate map
+      alu.a = mapout;
+      alu.b = toggle;
+      mapout= alu.out;
+      
+      alu.alufn = 000000; // add 16 to the position pointer
+      alu.a = pointer;
+      alu.b = 25b010000; // 16
+      pointer = alu.out;
+      
+      alu.alufn = 000011; // mod by 25
+      alu.a = pointer;
+      alu.b = 25b011001; // 25
+      pointer = alu.out;
+      
+    }
+    
+    out = mapout;
+    
   }
 }

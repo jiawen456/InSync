@@ -1,17 +1,87 @@
 module toggle_map (
-    input clk,  // clock
-    input rst,  // reset
-    input current_map[25],
-    input current_cursor[25],
-    output completed,
-    output out
+    input clk,
+    input rst,
+    input cursor[25],
+    input map[25],
+    output out[25],
+    output completed
   ) {
-
+  
+  sig mask1[25];
+  sig mask2[25];
+  sig mask3[25];
+  sig mask4[25];
+  
+  sig out_temp[25];
+  sig completed_or[25];
+  sig completed_and[25];
+  
+  alu alu;
+  
+  .clk(clk),.rst(rst) {
+    get_neighbours get_neighbours;
+    dff ctr[2];
+  }
+  
   always {
-    completed = b0;
-    if (current_map == 25b0) {
-      completed = b1;
+    
+    alu.alufn = 6b0;
+    alu.a = 25b0;
+    alu.b = 25b0;
+    
+    mask1 = 25b0;
+    mask2 = 25b0;
+    mask3 = 25b0;
+    mask4 = 25b0;
+    
+    out = 25b0;
+    out_temp = 25b0;
+    completed = 0;
+    
+    get_neighbours.cursor = cursor;
+    
+    case (ctr.q) {
+      
+      b00:
+        alu.alufn = 000000;
+        alu.a = cursor;
+        alu.b = get_neighbours.up;
+        mask1 = alu.out;
+      
+      b01:
+        alu.alufn = 000001;
+        alu.a = mask1;
+        alu.b = get_neighbours.down;
+        mask2 = alu.out;
+      
+      b10:
+        alu.alufn = 000000;
+        alu.a = mask2;
+        alu.b = get_neighbours.left;
+        mask3 = alu.out;
+      
+      b11:
+        alu.alufn = 000001;
+        alu.a = mask3;
+        alu.b = get_neighbours.right;
+        mask4 = alu.out;
+      
+      b100:
+        alu.alufn = 101010;
+        alu.a = map;
+        alu.b = mask4;
+        out_temp = alu.out;
     }
-    out = current_map + current_cursor;
+    
+    completed_or = |out_temp;
+    if (completed_or == 0) {
+      completed = 1;
+    }
+    
+    completed_and = &out_temp;
+    if (completed_and == 1) {
+      completed = 1;
+    }
+    
   }
 }

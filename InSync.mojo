@@ -13,16 +13,21 @@
     <src>compare_test.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>boole_test.luc</src>
+    <src>gen_map_temp.luc</src>
+    <src>toggle_map_temp.luc</src>
     <src>error_adder.luc</src>
     <src>toggle_map.luc</src>
+    <src>get_neighbours.luc</src>
     <src>seven_seg.luc</src>
     <src>shift_test.luc</src>
     <src>adder.luc</src>
     <src>boole.luc</src>
     <src>adder_test.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>
+    <ucf>custom.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <component>decoder.luc</component>
+    <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
     <component>pipeline.luc</component>
     <component>button_conditioner.luc</component>

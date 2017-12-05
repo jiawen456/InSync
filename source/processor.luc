@@ -44,12 +44,11 @@ module processor (
     
     counter reset_ctr(#SIZE(4),#DIV(30));
     
-    
     .rst(rst) {
       fsm state = {IDLE,GENMAP,PLAYING,RESET,CURSOR,TOGGLE,DONE};
       dff blink[25];
       
-      gen_map gen_map;
+      gen_map_temp gen_map;
       toggle_map toggle_map;
       shift_cursor shift_cursor;
       
@@ -66,19 +65,19 @@ module processor (
   
   always {
     
-    left_btn_cond.in = button[0];
+    left_btn_cond.in = button[3];
     left_btn.in = left_btn_cond.out;
     
-    right_btn_cond.in = button[1];
+    right_btn_cond.in = button[4];
     right_btn.in = right_btn_cond.out;
     
-    up_btn_cond.in = button[2];
+    up_btn_cond.in = button[0];
     up_btn.in = up_btn_cond.out;
     
-    down_btn_cond.in = button[3];
+    down_btn_cond.in = button[2];
     down_btn.in = down_btn_cond.out;
     
-    enter_btn_cond.in = button[4];
+    enter_btn_cond.in = button[1];
     enter_btn.in = enter_btn_cond.out;
     
     start_btn_cond.in = start_button;
@@ -91,19 +90,19 @@ module processor (
     
     current_highscore = 8b0;
     current_score = 8b0;
-    current_cursor = 25b0;
+    current_cursor = 25b1;
     current_map = 25b0;
     old_map = 25b0;
     direction = 2b0;
     
-    toggle_map.current_cursor = current_cursor;
-    toggle_map.current_map = current_map;
+    toggle_map.cursor = current_cursor;
+    toggle_map.map = current_map;
     
     shift_cursor.direction = direction;
-    shift_cursor.current_cursor = current_cursor;
+    shift_cursor.cursor = current_cursor;
     
-    decimal_highscore.a = 8b01100011;
-    decimal_score.a = 8b0;
+    decimal_highscore.a = current_highscore;
+    decimal_score.a = current_score;
     
     case(state.q) {
       
@@ -131,22 +130,22 @@ module processor (
         }
         
         if (up_btn.out) {
-          direction = 0;
+          direction = 2b00;
           state.d = state.CURSOR;
         }
         
         if (down_btn.out) {
-          direction = 1;
+          direction = 2b01;
           state.d = state.CURSOR;
         }
         
         if (left_btn.out) {
-          direction = 2;
+          direction = 2b10;
           state.d = state.CURSOR;
         }
         
         if (right_btn.out) {
-          direction = 3;
+          direction = 2b11;
           state.d = state.CURSOR;
         }
         
@@ -160,12 +159,11 @@ module processor (
         state.d = state.PLAYING;
       
       state.TOGGLE:
-        toggle_map.current_map = current_map;
-        toggle_map.current_cursor = current_cursor;
+        toggle_map.map = current_map;
+        toggle_map.cursor = current_cursor;
         
         completed = toggle_map.completed;
         current_map = toggle_map.out;
-        out = current_map;
         
         current_score = current_score + 8b1;
         
@@ -180,7 +178,7 @@ module processor (
       
       state.CURSOR:
         shift_cursor.direction = direction;
-        shift_cursor.current_cursor = current_cursor;
+        shift_cursor.cursor = current_cursor;
         
         current_cursor = shift_cursor.out;
         
@@ -190,6 +188,7 @@ module processor (
         blink.d = blink.q + 1;
         out = 25x{~blink.q[24]};
         
+        // to be changed
         current_highscore = current_score;
         
         if (start_btn.out) {
@@ -225,8 +224,6 @@ module processor (
     display_seg1 = ~sevenseg1.segs;
     display_seg2 = ~sevenseg2.segs;          
     display_seg3 = ~sevenseg3.segs;
-    
-    
     
   }
 }

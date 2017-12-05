@@ -1,0 +1,17 @@
+module toggle_map_temp (
+    input clk,  // clock
+    input rst,  // reset
+    input map[25],
+    input cursor[25],
+    output completed,
+    output out[25]
+  ) {
+
+  always {
+    completed = b0;
+    if (map == 25b0) {
+      completed = b1;
+    }
+    out = map + cursor;
+  }
+}
