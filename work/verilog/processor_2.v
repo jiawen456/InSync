@@ -10,28 +10,16 @@ module processor_2 (
     input [4:0] button,
     input start_button,
     input reset_button,
-    output reg display_seg0,
-    output reg display_seg1,
-    output reg display_seg2,
-    output reg display_seg3,
+    output reg [7:0] display_seg0,
+    output reg [7:0] display_seg1,
+    output reg [7:0] display_seg2,
+    output reg [7:0] display_seg3,
     output reg [24:0] out
   );
   
   
   
-  reg [24:0] old_map;
-  
-  reg [24:0] current_map;
-  
-  reg [24:0] current_cursor;
-  
-  reg [7:0] current_score;
-  
-  reg [7:0] current_highscore;
-  
   reg completed;
-  
-  reg [1:0] direction;
   
   reg [24:0] pos;
   
@@ -150,32 +138,38 @@ module processor_2 (
   
   reg [2:0] M_state_d, M_state_q = IDLE_state;
   reg [24:0] M_blink_d, M_blink_q = 1'h0;
-  wire [1-1:0] M_gen_map_out;
-  gen_map_19 gen_map (
+  reg [24:0] M_old_map_d, M_old_map_q = 1'h0;
+  reg [24:0] M_current_map_d, M_current_map_q = 1'h0;
+  reg [24:0] M_current_cursor_d, M_current_cursor_q = 1'h0;
+  reg [7:0] M_current_score_d, M_current_score_q = 1'h0;
+  reg [7:0] M_current_highscore_d, M_current_highscore_q = 1'h0;
+  reg [1:0] M_direction_d, M_direction_q = 1'h0;
+  wire [25-1:0] M_gen_map_out;
+  gen_map_temp_19 gen_map (
     .clk(clk),
     .rst(rst),
     .out(M_gen_map_out)
   );
+  wire [25-1:0] M_toggle_map_out;
   wire [1-1:0] M_toggle_map_completed;
-  wire [1-1:0] M_toggle_map_out;
-  reg [25-1:0] M_toggle_map_current_map;
-  reg [25-1:0] M_toggle_map_current_cursor;
+  reg [25-1:0] M_toggle_map_cursor;
+  reg [25-1:0] M_toggle_map_map;
   toggle_map_20 toggle_map (
     .clk(clk),
     .rst(rst),
-    .current_map(M_toggle_map_current_map),
-    .current_cursor(M_toggle_map_current_cursor),
-    .completed(M_toggle_map_completed),
-    .out(M_toggle_map_out)
+    .cursor(M_toggle_map_cursor),
+    .map(M_toggle_map_map),
+    .out(M_toggle_map_out),
+    .completed(M_toggle_map_completed)
   );
-  wire [1-1:0] M_shift_cursor_out;
+  wire [25-1:0] M_shift_cursor_out;
   reg [2-1:0] M_shift_cursor_direction;
-  reg [25-1:0] M_shift_cursor_current_cursor;
+  reg [25-1:0] M_shift_cursor_cursor;
   shift_cursor_21 shift_cursor (
     .clk(clk),
     .rst(rst),
     .direction(M_shift_cursor_direction),
-    .current_cursor(M_shift_cursor_current_cursor),
+    .cursor(M_shift_cursor_cursor),
     .out(M_shift_cursor_out)
   );
   
@@ -227,50 +221,60 @@ module processor_2 (
   
   always @* begin
     M_state_d = M_state_q;
+    M_current_score_d = M_current_score_q;
     M_blink_d = M_blink_q;
+    M_direction_d = M_direction_q;
+    M_current_cursor_d = M_current_cursor_q;
+    M_current_highscore_d = M_current_highscore_q;
+    M_current_map_d = M_current_map_q;
+    M_old_map_d = M_old_map_q;
     
-    M_left_btn_cond_in = button[0+0-:1];
+    M_left_btn_cond_in = button[3+0-:1];
     M_left_btn_in = M_left_btn_cond_out;
-    M_right_btn_cond_in = button[1+0-:1];
+    M_right_btn_cond_in = button[4+0-:1];
     M_right_btn_in = M_right_btn_cond_out;
-    M_up_btn_cond_in = button[2+0-:1];
+    M_up_btn_cond_in = button[0+0-:1];
     M_up_btn_in = M_up_btn_cond_out;
-    M_down_btn_cond_in = button[3+0-:1];
+    M_down_btn_cond_in = button[2+0-:1];
     M_down_btn_in = M_down_btn_cond_out;
-    M_enter_btn_cond_in = button[4+0-:1];
+    M_enter_btn_cond_in = button[1+0-:1];
     M_enter_btn_in = M_enter_btn_cond_out;
     M_start_btn_cond_in = start_button;
     M_start_btn_in = M_start_btn_cond_out;
     M_reset_btn_cond_in = reset_button;
     M_reset_btn_in = M_reset_btn_cond_out;
     M_reset_ctr_rst = 1'h0;
-    current_highscore = 8'h00;
-    current_score = 8'h00;
-    current_cursor = 25'h0000000;
-    current_map = 25'h0000000;
-    old_map = 25'h0000000;
-    direction = 2'h0;
-    M_toggle_map_current_cursor = current_cursor;
-    M_toggle_map_current_map = current_map;
-    M_shift_cursor_direction = direction;
-    M_shift_cursor_current_cursor = current_cursor;
-    M_decimal_highscore_a = current_highscore;
-    M_decimal_score_a = current_score;
+    M_toggle_map_cursor = M_current_cursor_q;
+    M_toggle_map_map = M_current_map_q;
+    M_shift_cursor_direction = M_direction_q;
+    M_shift_cursor_cursor = M_current_cursor_q;
+    M_decimal_highscore_a = M_current_highscore_q;
+    M_decimal_score_a = M_current_score_q;
+    M_old_map_d = M_old_map_q;
+    M_current_map_d = M_current_map_q;
+    M_current_cursor_d = M_current_cursor_q;
+    M_current_score_d = M_current_score_q;
+    M_current_highscore_d = M_current_highscore_q;
+    M_direction_d = M_direction_q;
     
     case (M_state_q)
       IDLE_state: begin
-        out = 25'h0000000;
-        if (M_start_btn_out) begin
+        M_current_map_d = 25'h0000002;
+        if (M_enter_btn_out) begin
           M_state_d = GENMAP_state;
         end
       end
       GENMAP_state: begin
-        current_map = M_gen_map_out;
-        old_map = current_map;
-        M_state_d = PLAYING_state;
+        M_current_map_d = M_gen_map_out;
+        M_old_map_d = M_current_map_q;
+        M_current_highscore_d = 8'h63;
+        M_current_score_d = 8'h00;
+        M_current_cursor_d = 8'h01;
+        if (M_enter_btn_out) begin
+          M_state_d = PLAYING_state;
+        end
       end
       PLAYING_state: begin
-        out = current_map;
         if (M_reset_btn_out) begin
           M_state_d = RESET_state;
         end
@@ -278,19 +282,19 @@ module processor_2 (
           M_state_d = TOGGLE_state;
         end
         if (M_up_btn_out) begin
-          direction = 1'h0;
+          M_direction_d = 2'h0;
           M_state_d = CURSOR_state;
         end
         if (M_down_btn_out) begin
-          direction = 1'h1;
+          M_direction_d = 2'h1;
           M_state_d = CURSOR_state;
         end
         if (M_left_btn_out) begin
-          direction = 2'h2;
+          M_direction_d = 2'h2;
           M_state_d = CURSOR_state;
         end
         if (M_right_btn_out) begin
-          direction = 2'h3;
+          M_direction_d = 2'h3;
           M_state_d = CURSOR_state;
         end
         if (M_start_btn_out) begin
@@ -298,17 +302,15 @@ module processor_2 (
         end
       end
       RESET_state: begin
-        out = old_map;
-        current_map = old_map;
+        M_current_map_d = M_old_map_q;
         M_state_d = PLAYING_state;
       end
       TOGGLE_state: begin
-        M_toggle_map_current_map = current_map;
-        M_toggle_map_current_cursor = current_cursor;
+        M_toggle_map_map = M_current_map_q;
+        M_toggle_map_cursor = M_current_cursor_q;
         completed = M_toggle_map_completed;
-        current_map = M_toggle_map_out;
-        out = current_map;
-        current_score = current_score + 8'h01;
+        M_current_map_d = M_toggle_map_out;
+        M_current_score_d = M_current_score_q + 8'h01;
         if (completed == 1'h0) begin
           M_state_d = PLAYING_state;
         end
@@ -318,18 +320,19 @@ module processor_2 (
         end
       end
       CURSOR_state: begin
-        M_shift_cursor_direction = direction;
-        M_shift_cursor_current_cursor = current_cursor;
-        current_cursor = M_shift_cursor_out;
+        M_shift_cursor_direction = M_direction_q;
+        M_shift_cursor_cursor = M_current_cursor_q;
+        M_current_cursor_d = M_shift_cursor_out;
+        out = M_current_cursor_q;
         M_state_d = PLAYING_state;
       end
       DONE_state: begin
         M_blink_d = M_blink_q + 1'h1;
         out = {5'h19{~M_blink_q[24+0-:1]}};
-        current_highscore = current_score;
+        M_current_highscore_d = M_current_score_q;
         if (M_start_btn_out) begin
-          current_cursor = 25'h0000001;
-          current_map = 25'h0000000;
+          M_current_cursor_d = 25'h0000001;
+          M_current_map_d = 25'h0000000;
           M_state_d = IDLE_state;
         end
         if (M_reset_btn_out) begin
@@ -340,13 +343,11 @@ module processor_2 (
         end
       end
       default: begin
-        out = 25'h0000000;
+        out = 25'h002aaaa;
       end
     endcase
     M_blink_d = M_blink_q + 1'h1;
-    out = current_map;
-    pos = $clog2(current_cursor);
-    out[(pos)*1+0-:1] = M_blink_q[24+0-:1];
+    out = M_current_map_q;
     M_sevenseg3_char = M_decimal_highscore_out1;
     M_sevenseg2_char = M_decimal_highscore_out0;
     M_sevenseg1_char = M_decimal_score_out1;
@@ -360,9 +361,21 @@ module processor_2 (
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_blink_q <= 1'h0;
+      M_old_map_q <= 1'h0;
+      M_current_map_q <= 1'h0;
+      M_current_cursor_q <= 1'h0;
+      M_current_score_q <= 1'h0;
+      M_current_highscore_q <= 1'h0;
+      M_direction_q <= 1'h0;
       M_state_q <= 1'h0;
     end else begin
       M_blink_q <= M_blink_d;
+      M_old_map_q <= M_old_map_d;
+      M_current_map_q <= M_current_map_d;
+      M_current_cursor_q <= M_current_cursor_d;
+      M_current_score_q <= M_current_score_d;
+      M_current_highscore_q <= M_current_highscore_d;
+      M_direction_q <= M_direction_d;
       M_state_q <= M_state_d;
     end
   end

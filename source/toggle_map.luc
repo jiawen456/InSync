@@ -40,6 +40,8 @@ module toggle_map (
     
     get_neighbours.cursor = cursor;
     
+    ctr.d = ctr.q + 1;
+    
     case (ctr.q) {
       
       b00:

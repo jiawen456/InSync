@@ -13,6 +13,7 @@ module get_neighbours (
   }
   
   alu alu;
+  get_position get_position;
   
   const HORI = 4; // step amount in horizontal direction
   const VERT = 3; // step amount in vertical direction
@@ -21,6 +22,7 @@ module get_neighbours (
   sig down_temp[25];
   sig left_temp[25];
   sig right_temp[25];
+  sig cursor_position[5];
   
   always {
     
@@ -32,6 +34,11 @@ module get_neighbours (
     down_temp = 25b0;
     left_temp = 25b0;
     right_temp = 25b0;
+    
+    get_position.cursor = cursor;
+    cursor_position = get_position.pos;
+    
+    ctr.d = ctr.q + 1;
     
     case(ctr.q) {
       
@@ -67,7 +74,7 @@ module get_neighbours (
     }
     
     // set the edges to 25b0
-    case ($clog2(cursor)) {
+    case (cursor_position) {
       
       0:
         up = 25b0;

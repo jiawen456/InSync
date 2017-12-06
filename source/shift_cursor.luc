@@ -9,7 +9,7 @@ module shift_cursor (
   sig out_temp[25];
   
   .clk(clk), .rst(rst) {
-    get_neighbours get_neighbours;
+    get_neighbours_test get_neighbours;
   }
   
   always {

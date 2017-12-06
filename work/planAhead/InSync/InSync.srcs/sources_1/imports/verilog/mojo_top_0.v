@@ -37,10 +37,10 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [1-1:0] M_processor_display_seg0;
-  wire [1-1:0] M_processor_display_seg1;
-  wire [1-1:0] M_processor_display_seg2;
-  wire [1-1:0] M_processor_display_seg3;
+  wire [8-1:0] M_processor_display_seg0;
+  wire [8-1:0] M_processor_display_seg1;
+  wire [8-1:0] M_processor_display_seg2;
+  wire [8-1:0] M_processor_display_seg3;
   wire [25-1:0] M_processor_out;
   reg [5-1:0] M_processor_button;
   reg [1-1:0] M_processor_start_button;
@@ -84,24 +84,24 @@ module mojo_top_0 (
     
     case (M_seven_seg_ctr_value)
       1'h0: begin
-        io_seg = ~M_processor_display_seg0;
-        io_sel = 4'he;
+        io_seg = M_processor_display_seg0;
+        io_sel = 4'h1;
       end
       1'h1: begin
-        io_seg = ~M_processor_display_seg1;
-        io_sel = 4'hd;
+        io_seg = M_processor_display_seg1;
+        io_sel = 4'h2;
       end
       2'h2: begin
-        io_seg = ~M_processor_display_seg2;
-        io_sel = 4'hb;
+        io_seg = M_processor_display_seg2;
+        io_sel = 4'h4;
       end
       2'h3: begin
-        io_seg = ~M_processor_display_seg3;
-        io_sel = 4'h7;
+        io_seg = M_processor_display_seg3;
+        io_sel = 4'h8;
       end
       default: begin
-        io_seg = ~M_processor_display_seg0;
-        io_sel = 4'he;
+        io_seg = M_processor_display_seg0;
+        io_sel = 4'h1;
       end
     endcase
   end

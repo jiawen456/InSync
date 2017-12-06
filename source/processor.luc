@@ -4,20 +4,14 @@ module processor (
     input button[5],
     input start_button,
     input reset_button,
-    output display_seg0,
-    output display_seg1,
-    output display_seg2,
-    output display_seg3,
+    output display_seg0[8],
+    output display_seg1[8],
+    output display_seg2[8],
+    output display_seg3[8],
     output out[25]
   ) {
   
-  sig old_map[25];
-  sig current_map[25];
-  sig current_cursor[25];
-  sig current_score[8];
-  sig current_highscore[8];
   sig completed;
-  sig direction[2];
   sig pos[25];
   
   .clk(clk) {
@@ -47,6 +41,13 @@ module processor (
     .rst(rst) {
       fsm state = {IDLE,GENMAP,PLAYING,RESET,CURSOR,TOGGLE,DONE};
       dff blink[25];
+      
+      dff old_map[25];
+      dff current_map[25];
+      dff current_cursor[25];
+      dff current_score[8];
+      dff current_highscore[8];
+      dff direction[2];
       
       gen_map_temp gen_map;
       toggle_map toggle_map;
@@ -88,39 +89,49 @@ module processor (
     
     reset_ctr.rst = 0;
     
-    current_highscore = 8b0;
-    current_score = 8b0;
-    current_cursor = 25b1;
-    current_map = 25b0;
-    old_map = 25b0;
-    direction = 2b0;
+    toggle_map.cursor = current_cursor.q;
+    toggle_map.map = current_map.q;
     
-    toggle_map.cursor = current_cursor;
-    toggle_map.map = current_map;
+    shift_cursor.direction = direction.q;
+    shift_cursor.cursor = current_cursor.q;
     
-    shift_cursor.direction = direction;
-    shift_cursor.cursor = current_cursor;
+    decimal_highscore.a = current_highscore.q;
+    decimal_score.a = current_score.q;
     
-    decimal_highscore.a = current_highscore;
-    decimal_score.a = current_score;
+    // set dff defaults
+    old_map.d = old_map.q;
+    current_map.d = current_map.q;
+    current_cursor.d = current_cursor.q;
+    current_score.d = current_score.q;
+    current_highscore.d = current_highscore.q;
+    direction.d = direction.q;
     
     case(state.q) {
       
       state.IDLE:
-        out = 25b0;
+        current_map.d = 25b10;
         
-        if (start_btn.out) {
+        // change back to start_btn
+        if (enter_btn.out) {
           state.d = state.GENMAP;
         }
       
       state.GENMAP:
-        current_map = gen_map.out;
-        old_map = current_map;
-        state.d = state.PLAYING;
+        
+        // change to gen_map.out
+        current_map.d = gen_map.out;
+        old_map.d = current_map.q;
+        current_highscore.d = 8b01100011;
+        current_score.d = 8b0;
+        current_cursor.d = 8b1;
+        
+        if (enter_btn.out) {
+          state.d = state.PLAYING;
+        }
+      
+      //state.d = state.PLAYING;
       
       state.PLAYING:
-        out = current_map;
-        
         if (reset_btn.out) {
           state.d = state.RESET;
         }
@@ -130,22 +141,22 @@ module processor (
         }
         
         if (up_btn.out) {
-          direction = 2b00;
+          direction.d = 2b00;
           state.d = state.CURSOR;
         }
         
         if (down_btn.out) {
-          direction = 2b01;
+          direction.d = 2b01;
           state.d = state.CURSOR;
         }
         
         if (left_btn.out) {
-          direction = 2b10;
+          direction.d = 2b10;
           state.d = state.CURSOR;
         }
         
         if (right_btn.out) {
-          direction = 2b11;
+          direction.d = 2b11;
           state.d = state.CURSOR;
         }
         
@@ -154,18 +165,17 @@ module processor (
         }
       
       state.RESET:
-        out = old_map;
-        current_map = old_map;
+        current_map.d = old_map.q;
         state.d = state.PLAYING;
       
       state.TOGGLE:
-        toggle_map.map = current_map;
-        toggle_map.cursor = current_cursor;
+        toggle_map.map = current_map.q;
+        toggle_map.cursor = current_cursor.q;
         
         completed = toggle_map.completed;
-        current_map = toggle_map.out;
+        current_map.d = toggle_map.out;
         
-        current_score = current_score + 8b1;
+        current_score.d = current_score.q + 8b1;
         
         if (completed == 0) {
           state.d = state.PLAYING;
@@ -177,10 +187,11 @@ module processor (
         }
       
       state.CURSOR:
-        shift_cursor.direction = direction;
-        shift_cursor.cursor = current_cursor;
+        shift_cursor.direction = direction.q;
+        shift_cursor.cursor = current_cursor.q;
         
-        current_cursor = shift_cursor.out;
+        current_cursor.d = shift_cursor.out;
+        out = current_cursor.q;
         
         state.d = state.PLAYING;
       
@@ -189,11 +200,11 @@ module processor (
         out = 25x{~blink.q[24]};
         
         // to be changed
-        current_highscore = current_score;
+        current_highscore.d = current_score.q;
         
         if (start_btn.out) {
-          current_cursor = 25b1;
-          current_map = 25b0;
+          current_cursor.d = 25b1;
+          current_map.d = 25b0;
           state.d = state.IDLE;
         }
         
@@ -207,22 +218,23 @@ module processor (
         }
       
       default:
-        out = 25b0;
+        out = 25b101010101010101010;
     }
     
     blink.d = blink.q + 1;
-    out = current_map;
-    pos = $clog2(current_cursor);
-    out[pos] = blink.q[24];
+    out = current_map.q;
+    //get_position.cursor = current_cursor.q;
+    //pos = get_position.pos;
+    //out[pos] = blink.q[24];
     
     sevenseg3.char = decimal_highscore.out1;
     sevenseg2.char = decimal_highscore.out0;
     sevenseg1.char = decimal_score.out1;
     sevenseg0.char = decimal_score.out0;
     
-    display_seg0 = ~sevenseg0.segs; 
+    display_seg0 = ~sevenseg0.segs;
     display_seg1 = ~sevenseg1.segs;
-    display_seg2 = ~sevenseg2.segs;          
+    display_seg2 = ~sevenseg2.segs;
     display_seg3 = ~sevenseg3.segs;
     
   }

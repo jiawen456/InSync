@@ -7,19 +7,119 @@
 module toggle_map_20 (
     input clk,
     input rst,
-    input [24:0] current_map,
-    input [24:0] current_cursor,
-    output reg completed,
-    output reg out
+    input [24:0] cursor,
+    input [24:0] map,
+    output reg [24:0] out,
+    output reg completed
   );
   
   
   
+  reg [24:0] mask1;
+  
+  reg [24:0] mask2;
+  
+  reg [24:0] mask3;
+  
+  reg [24:0] mask4;
+  
+  reg [24:0] out_temp;
+  
+  reg [24:0] completed_or;
+  
+  reg [24:0] completed_and;
+  
+  wire [25-1:0] M_alu_out;
+  reg [25-1:0] M_alu_a;
+  reg [25-1:0] M_alu_b;
+  reg [6-1:0] M_alu_alufn;
+  alu_35 alu (
+    .a(M_alu_a),
+    .b(M_alu_b),
+    .alufn(M_alu_alufn),
+    .out(M_alu_out)
+  );
+  
+  wire [25-1:0] M_get_neighbours_up;
+  wire [25-1:0] M_get_neighbours_down;
+  wire [25-1:0] M_get_neighbours_left;
+  wire [25-1:0] M_get_neighbours_right;
+  reg [25-1:0] M_get_neighbours_cursor;
+  get_neighbours_36 get_neighbours (
+    .clk(clk),
+    .rst(rst),
+    .cursor(M_get_neighbours_cursor),
+    .up(M_get_neighbours_up),
+    .down(M_get_neighbours_down),
+    .left(M_get_neighbours_left),
+    .right(M_get_neighbours_right)
+  );
+  reg [1:0] M_ctr_d, M_ctr_q = 1'h0;
+  
   always @* begin
+    M_ctr_d = M_ctr_q;
+    
+    M_alu_alufn = 6'h00;
+    M_alu_a = 25'h0000000;
+    M_alu_b = 25'h0000000;
+    mask1 = 25'h0000000;
+    mask2 = 25'h0000000;
+    mask3 = 25'h0000000;
+    mask4 = 25'h0000000;
+    out = 25'h0000000;
+    out_temp = 25'h0000000;
     completed = 1'h0;
-    if (current_map == 25'h0000000) begin
+    M_get_neighbours_cursor = cursor;
+    M_ctr_d = M_ctr_q + 1'h1;
+    
+    case (M_ctr_q)
+      2'h0: begin
+        M_alu_alufn = 1'h0;
+        M_alu_a = cursor;
+        M_alu_b = M_get_neighbours_up;
+        mask1 = M_alu_out;
+      end
+      2'h1: begin
+        M_alu_alufn = 1'h1;
+        M_alu_a = mask1;
+        M_alu_b = M_get_neighbours_down;
+        mask2 = M_alu_out;
+      end
+      2'h2: begin
+        M_alu_alufn = 1'h0;
+        M_alu_a = mask2;
+        M_alu_b = M_get_neighbours_left;
+        mask3 = M_alu_out;
+      end
+      2'h3: begin
+        M_alu_alufn = 1'h1;
+        M_alu_a = mask3;
+        M_alu_b = M_get_neighbours_right;
+        mask4 = M_alu_out;
+      end
+      3'h4: begin
+        M_alu_alufn = 17'h18a92;
+        M_alu_a = map;
+        M_alu_b = mask4;
+        out_temp = M_alu_out;
+      end
+    endcase
+    completed_or = (|out_temp);
+    if (completed_or == 1'h0) begin
       completed = 1'h1;
     end
-    out = current_map + current_cursor;
+    completed_and = (&out_temp);
+    if (completed_and == 1'h1) begin
+      completed = 1'h1;
+    end
   end
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_ctr_q <= 1'h0;
+    end else begin
+      M_ctr_q <= M_ctr_d;
+    end
+  end
+  
 endmodule

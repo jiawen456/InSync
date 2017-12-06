@@ -4,15 +4,15 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module gen_map_19 (
+module gen_map_temp_19 (
     input clk,
     input rst,
-    output reg out
+    output reg [24:0] out
   );
   
   
   
   always @* begin
-    out = 25'h0000010;
+    out = 25'h0000800;
   end
 endmodule
