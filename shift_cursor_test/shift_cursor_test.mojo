@@ -4,13 +4,13 @@
     <src>shift.luc</src>
     <src>shift_cursor.luc</src>
     <src>alu.luc</src>
+    <src>get_position.luc</src>
     <src>processor.luc</src>
+    <src>get_neighbours.luc</src>
     <src>mojo_temp.luc</src>
     <src>compare.luc</src>
-    <src top="true">mojo_top.luc</src>
-    <src>get_position.luc</src>
-    <src>get_neighbours.luc</src>
     <src>adder.luc</src>
+    <src top="true">mojo_top.luc</src>
     <src>boole.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>

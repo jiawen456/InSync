@@ -88,8 +88,8 @@ module processor_3 (
     .out(M_enter_btn_cond_out)
   );
   reg [24:0] M_blink_d, M_blink_q = 1'h0;
-  reg [24:0] M_current_cursor_d, M_current_cursor_q = 25'h0000010;
-  reg [24:0] M_next_cursor_d, M_next_cursor_q = 25'h0000020;
+  reg [24:0] M_current_cursor_d, M_current_cursor_q = 25'h0000001;
+  reg [24:0] M_next_cursor_d, M_next_cursor_q = 25'h0000001;
   reg [1:0] M_direction_d, M_direction_q = 1'h0;
   localparam IDLE_state = 2'd0;
   localparam PLAYING_state = 2'd1;
@@ -166,11 +166,9 @@ module processor_3 (
         end
       end
       SHIFT_state: begin
-        M_shift_cursor_direction = M_direction_q;
-        M_shift_cursor_cursor = M_current_cursor_q;
         out_temp = M_shift_cursor_out;
-        M_state_d = PLAYING_state;
         M_next_cursor_d = out_temp;
+        M_state_d = PLAYING_state;
       end
     endcase
     M_blink_d = M_blink_q + 1'h1;
@@ -183,8 +181,8 @@ module processor_3 (
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_blink_q <= 1'h0;
-      M_current_cursor_q <= 25'h0000010;
-      M_next_cursor_q <= 25'h0000020;
+      M_current_cursor_q <= 25'h0000001;
+      M_next_cursor_q <= 25'h0000001;
       M_direction_q <= 1'h0;
       M_state_q <= 1'h0;
     end else begin

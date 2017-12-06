@@ -21,7 +21,7 @@ module shift_cursor_21 (
   wire [25-1:0] M_get_neighbours_left;
   wire [25-1:0] M_get_neighbours_right;
   reg [25-1:0] M_get_neighbours_cursor;
-  get_neighbours_test_37 get_neighbours (
+  get_neighbours_37 get_neighbours (
     .clk(clk),
     .rst(rst),
     .cursor(M_get_neighbours_cursor),

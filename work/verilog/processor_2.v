@@ -21,6 +21,8 @@ module processor_2 (
   
   reg completed;
   
+  reg [24:0] out_temp;
+  
   reg [24:0] pos;
   
   wire [1-1:0] M_left_btn_out;
@@ -140,9 +142,10 @@ module processor_2 (
   reg [24:0] M_blink_d, M_blink_q = 1'h0;
   reg [24:0] M_old_map_d, M_old_map_q = 1'h0;
   reg [24:0] M_current_map_d, M_current_map_q = 1'h0;
-  reg [24:0] M_current_cursor_d, M_current_cursor_q = 1'h0;
   reg [7:0] M_current_score_d, M_current_score_q = 1'h0;
   reg [7:0] M_current_highscore_d, M_current_highscore_q = 1'h0;
+  reg [24:0] M_current_cursor_d, M_current_cursor_q = 25'h0000001;
+  reg [24:0] M_next_cursor_d, M_next_cursor_q = 25'h0000001;
   reg [1:0] M_direction_d, M_direction_q = 1'h0;
   wire [25-1:0] M_gen_map_out;
   gen_map_temp_19 gen_map (
@@ -173,10 +176,17 @@ module processor_2 (
     .out(M_shift_cursor_out)
   );
   
+  wire [5-1:0] M_get_position_pos;
+  reg [25-1:0] M_get_position_cursor;
+  get_position_22 get_position (
+    .cursor(M_get_position_cursor),
+    .pos(M_get_position_pos)
+  );
+  
   wire [4-1:0] M_decimal_score_out1;
   wire [4-1:0] M_decimal_score_out0;
   reg [8-1:0] M_decimal_score_a;
-  decimal2_22 decimal_score (
+  decimal2_23 decimal_score (
     .a(M_decimal_score_a),
     .out1(M_decimal_score_out1),
     .out0(M_decimal_score_out0)
@@ -185,7 +195,7 @@ module processor_2 (
   wire [4-1:0] M_decimal_highscore_out1;
   wire [4-1:0] M_decimal_highscore_out0;
   reg [8-1:0] M_decimal_highscore_a;
-  decimal2_22 decimal_highscore (
+  decimal2_23 decimal_highscore (
     .a(M_decimal_highscore_a),
     .out1(M_decimal_highscore_out1),
     .out0(M_decimal_highscore_out0)
@@ -193,34 +203,35 @@ module processor_2 (
   
   wire [8-1:0] M_sevenseg3_segs;
   reg [5-1:0] M_sevenseg3_char;
-  seven_seg_24 sevenseg3 (
+  seven_seg_25 sevenseg3 (
     .char(M_sevenseg3_char),
     .segs(M_sevenseg3_segs)
   );
   
   wire [8-1:0] M_sevenseg2_segs;
   reg [5-1:0] M_sevenseg2_char;
-  seven_seg_24 sevenseg2 (
+  seven_seg_25 sevenseg2 (
     .char(M_sevenseg2_char),
     .segs(M_sevenseg2_segs)
   );
   
   wire [8-1:0] M_sevenseg1_segs;
   reg [5-1:0] M_sevenseg1_char;
-  seven_seg_24 sevenseg1 (
+  seven_seg_25 sevenseg1 (
     .char(M_sevenseg1_char),
     .segs(M_sevenseg1_segs)
   );
   
   wire [8-1:0] M_sevenseg0_segs;
   reg [5-1:0] M_sevenseg0_char;
-  seven_seg_24 sevenseg0 (
+  seven_seg_25 sevenseg0 (
     .char(M_sevenseg0_char),
     .segs(M_sevenseg0_segs)
   );
   
   always @* begin
     M_state_d = M_state_q;
+    M_next_cursor_d = M_next_cursor_q;
     M_current_score_d = M_current_score_q;
     M_blink_d = M_blink_q;
     M_direction_d = M_direction_q;
@@ -256,6 +267,8 @@ module processor_2 (
     M_current_score_d = M_current_score_q;
     M_current_highscore_d = M_current_highscore_q;
     M_direction_d = M_direction_q;
+    M_next_cursor_d = M_next_cursor_q;
+    out_temp = 25'h0000000;
     
     case (M_state_q)
       IDLE_state: begin
@@ -275,6 +288,8 @@ module processor_2 (
         end
       end
       PLAYING_state: begin
+        M_current_cursor_d = M_next_cursor_q;
+        out_temp = M_current_cursor_q;
         if (M_reset_btn_out) begin
           M_state_d = RESET_state;
         end
@@ -320,10 +335,8 @@ module processor_2 (
         end
       end
       CURSOR_state: begin
-        M_shift_cursor_direction = M_direction_q;
-        M_shift_cursor_cursor = M_current_cursor_q;
-        M_current_cursor_d = M_shift_cursor_out;
-        out = M_current_cursor_q;
+        out_temp = M_shift_cursor_out;
+        M_next_cursor_d = out_temp;
         M_state_d = PLAYING_state;
       end
       DONE_state: begin
@@ -347,7 +360,10 @@ module processor_2 (
       end
     endcase
     M_blink_d = M_blink_q + 1'h1;
+    M_get_position_cursor = out_temp;
+    pos = M_get_position_pos;
     out = M_current_map_q;
+    out[(pos)*1+0-:1] = M_blink_q[24+0-:1];
     M_sevenseg3_char = M_decimal_highscore_out1;
     M_sevenseg2_char = M_decimal_highscore_out0;
     M_sevenseg1_char = M_decimal_score_out1;
@@ -363,18 +379,20 @@ module processor_2 (
       M_blink_q <= 1'h0;
       M_old_map_q <= 1'h0;
       M_current_map_q <= 1'h0;
-      M_current_cursor_q <= 1'h0;
       M_current_score_q <= 1'h0;
       M_current_highscore_q <= 1'h0;
+      M_current_cursor_q <= 25'h0000001;
+      M_next_cursor_q <= 25'h0000001;
       M_direction_q <= 1'h0;
       M_state_q <= 1'h0;
     end else begin
       M_blink_q <= M_blink_d;
       M_old_map_q <= M_old_map_d;
       M_current_map_q <= M_current_map_d;
-      M_current_cursor_q <= M_current_cursor_d;
       M_current_score_q <= M_current_score_d;
       M_current_highscore_q <= M_current_highscore_d;
+      M_current_cursor_q <= M_current_cursor_d;
+      M_next_cursor_q <= M_next_cursor_d;
       M_direction_q <= M_direction_d;
       M_state_q <= M_state_d;
     end

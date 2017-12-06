@@ -27,8 +27,8 @@ module processor (
     .rst(rst) {
       
       dff blink[25];
-      dff current_cursor[25](#INIT(25b10000));
-      dff next_cursor[25](#INIT(25b100000));
+      dff current_cursor[25](#INIT(25b1));
+      dff next_cursor[25](#INIT(25b1));
       dff direction[2];
       
       fsm state = {IDLE,PLAYING,SHIFT};
@@ -99,13 +99,11 @@ module processor (
         }
       
       state.SHIFT:
-        shift_cursor.direction = direction.q;
-        shift_cursor.cursor = current_cursor.q;
-        
+      
         out_temp = shift_cursor.out;
+        next_cursor.d = out_temp;
         
         state.d = state.PLAYING;
-        next_cursor.d = out_temp;
       
     }
     

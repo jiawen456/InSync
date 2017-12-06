@@ -53,36 +53,34 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_39.v" into library work
-Parsing module <shift_39>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/compare_41.v" into library work
-Parsing module <compare_41>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/boole_40.v" into library work
-Parsing module <boole_40>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/adder_38.v" into library work
-Parsing module <adder_38>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_position_42.v" into library work
-Parsing module <get_position_42>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_35.v" into library work
-Parsing module <alu_35>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/pipeline_28.v" into library work
-Parsing module <pipeline_28>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_neighbours_test_37.v" into library work
-Parsing module <get_neighbours_test_37>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_neighbours_36.v" into library work
-Parsing module <get_neighbours_36>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_40.v" into library work
+Parsing module <shift_40>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/compare_42.v" into library work
+Parsing module <compare_42>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/boole_41.v" into library work
+Parsing module <boole_41>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/adder_39.v" into library work
+Parsing module <adder_39>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_position_22.v" into library work
+Parsing module <get_position_22>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_36.v" into library work
+Parsing module <alu_36>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/pipeline_29.v" into library work
+Parsing module <pipeline_29>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_neighbours_37.v" into library work
+Parsing module <get_neighbours_37>.
 Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" into library work
 Parsing module <toggle_map_20>.
 Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_cursor_21.v" into library work
 Parsing module <shift_cursor_21>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/seven_seg_24.v" into library work
-Parsing module <seven_seg_24>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/seven_seg_25.v" into library work
+Parsing module <seven_seg_25>.
 Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/gen_map_temp_19.v" into library work
 Parsing module <gen_map_temp_19>.
 Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/edge_detector_4.v" into library work
 Parsing module <edge_detector_4>.
-Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" into library work
-Parsing module <decimal2_22>.
+Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" into library work
+Parsing module <decimal2_23>.
 Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/counter_18.v" into library work
 Parsing module <counter_18>.
 Analyzing Verilog file "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/button_conditioner_5.v" into library work
@@ -110,7 +108,7 @@ Elaborating module <edge_detector_4>.
 
 Elaborating module <button_conditioner_5>.
 
-Elaborating module <pipeline_28>.
+Elaborating module <pipeline_29>.
 
 Elaborating module <counter_18>.
 
@@ -118,43 +116,41 @@ Elaborating module <gen_map_temp_19>.
 
 Elaborating module <toggle_map_20>.
 
-Elaborating module <alu_35>.
+Elaborating module <alu_36>.
 
-Elaborating module <adder_38>.
-WARNING:HDLCompiler:1127 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_35.v" Line 28: Assignment to M_adder_overflow ignored, since the identifier is never used
+Elaborating module <adder_39>.
+WARNING:HDLCompiler:1127 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_36.v" Line 28: Assignment to M_adder_overflow ignored, since the identifier is never used
 
-Elaborating module <shift_39>.
+Elaborating module <shift_40>.
 
-Elaborating module <boole_40>.
+Elaborating module <boole_41>.
 
-Elaborating module <compare_41>.
+Elaborating module <compare_42>.
 
-Elaborating module <get_neighbours_36>.
+Elaborating module <get_neighbours_37>.
 
-Elaborating module <get_position_42>.
+Elaborating module <get_position_22>.
 WARNING:HDLCompiler:295 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" Line 100: case condition never applies
 
 Elaborating module <shift_cursor_21>.
 
-Elaborating module <get_neighbours_test_37>.
+Elaborating module <decimal2_23>.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 22: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 26: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 30: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 34: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 38: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 42: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 46: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 50: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 54: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v" Line 58: Result of 8-bit expression is truncated to fit in 4-bit target.
 
-Elaborating module <decimal2_22>.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 22: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 26: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 30: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 34: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 38: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 42: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 46: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 50: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 54: Result of 8-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v" Line 58: Result of 8-bit expression is truncated to fit in 4-bit target.
-
-Elaborating module <seven_seg_24>.
+Elaborating module <seven_seg_25>.
 
 Elaborating module <counter_3>.
-WARNING:Xst:2972 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" line 36. All outputs of instance <alu> of block <alu_35> are unconnected in block <toggle_map_20>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" line 48. All outputs of instance <get_neighbours> of block <get_neighbours_36> are unconnected in block <toggle_map_20>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" line 36. All outputs of instance <alu> of block <alu_36> are unconnected in block <toggle_map_20>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/toggle_map_20.v" line 48. All outputs of instance <get_neighbours> of block <get_neighbours_37> are unconnected in block <toggle_map_20>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -170,13 +166,13 @@ WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 4x4-bit Read Only RAM for signal <io_sel>
-    Found 8-bit 4-to-1 multiplexer for signal <io_seg> created at line 85.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 67
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 67
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 67
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 67
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 67
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 67
+    Found 8-bit 4-to-1 multiplexer for signal <io_seg> created at line 89.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 69
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 69
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 69
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Multiplexer(s).
@@ -194,11 +190,13 @@ Synthesizing Unit <processor_2>.
     Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/processor_2.v".
     Found 25-bit register for signal <M_old_map_q>.
     Found 25-bit register for signal <M_current_map_q>.
-    Found 25-bit register for signal <M_current_cursor_q>.
     Found 8-bit register for signal <M_current_score_q>.
     Found 8-bit register for signal <M_current_highscore_q>.
+    Found 25-bit register for signal <M_current_cursor_q>.
+    Found 25-bit register for signal <M_next_cursor_q>.
     Found 2-bit register for signal <M_direction_q>.
     Found 3-bit register for signal <M_state_q>.
+    Found 25-bit register for signal <M_blink_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
@@ -213,11 +211,12 @@ Synthesizing Unit <processor_2>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_13_OUT> created at line 313.
+    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_13_OUT> created at line 328.
+    Found 25-bit adder for signal <M_blink_d> created at line 362.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  93 D-type flip-flop(s).
-	inferred  10 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 143 D-type flip-flop(s).
+	inferred  40 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <processor_2> synthesized.
 
@@ -237,12 +236,12 @@ Synthesizing Unit <button_conditioner_5>.
 	inferred  20 D-type flip-flop(s).
 Unit <button_conditioner_5> synthesized.
 
-Synthesizing Unit <pipeline_28>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/pipeline_28.v".
+Synthesizing Unit <pipeline_29>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/pipeline_29.v".
     Found 2-bit register for signal <M_pipe_q>.
     Summary:
 	inferred   2 D-type flip-flop(s).
-Unit <pipeline_28> synthesized.
+Unit <pipeline_29> synthesized.
 
 Synthesizing Unit <counter_18>.
     Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/counter_18.v".
@@ -269,16 +268,16 @@ INFO:Xst:3210 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync
 	no macro.
 Unit <toggle_map_20> synthesized.
 
-Synthesizing Unit <alu_35>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_35.v".
-INFO:Xst:3210 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_35.v" line 21: Output port <overflow> of the instance <adder> is unconnected or connected to loadless signal.
+Synthesizing Unit <alu_36>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_36.v".
+INFO:Xst:3210 - "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/alu_36.v" line 21: Output port <overflow> of the instance <adder> is unconnected or connected to loadless signal.
     Found 25-bit 4-to-1 multiplexer for signal <out> created at line 65.
     Summary:
 	inferred   1 Multiplexer(s).
-Unit <alu_35> synthesized.
+Unit <alu_36> synthesized.
 
-Synthesizing Unit <adder_38>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/adder_38.v".
+Synthesizing Unit <adder_39>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/adder_39.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 25-bit subtractor for signal <compare_sum> created at line 29.
     Found 25-bit subtractor for signal <a[24]_a[24]_sub_8_OUT> created at line 47.
@@ -291,7 +290,7 @@ WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved 
 	inferred   2 Multiplier(s).
 	inferred   3 Adder/Subtractor(s).
 	inferred   6 Multiplexer(s).
-Unit <adder_38> synthesized.
+Unit <adder_39> synthesized.
 
 Synthesizing Unit <div_25u_25u>.
     Related source file is "".
@@ -377,8 +376,8 @@ Synthesizing Unit <div_25u_25u>.
 	inferred 601 Multiplexer(s).
 Unit <div_25u_25u> synthesized.
 
-Synthesizing Unit <shift_39>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_39.v".
+Synthesizing Unit <shift_40>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_40.v".
 WARNING:Xst:647 - Input <b<24:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 25-bit shifter logical left for signal <a[24]_b[2]_shift_left_0_OUT> created at line 20
@@ -388,38 +387,25 @@ WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved 
     Summary:
 	inferred   1 Multiplexer(s).
 	inferred   3 Combinational logic shifter(s).
-Unit <shift_39> synthesized.
+Unit <shift_40> synthesized.
 
-Synthesizing Unit <boole_40>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/boole_40.v".
+Synthesizing Unit <boole_41>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/boole_41.v".
 WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
-Unit <boole_40> synthesized.
+Unit <boole_41> synthesized.
 
-Synthesizing Unit <compare_41>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/compare_41.v".
+Synthesizing Unit <compare_42>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/compare_42.v".
 WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit 4-to-1 multiplexer for signal <lsb> created at line 21.
     Summary:
 	inferred   1 Multiplexer(s).
-Unit <compare_41> synthesized.
+Unit <compare_42> synthesized.
 
-Synthesizing Unit <get_position_42>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_position_42.v".
-    Summary:
-	no macro.
-Unit <get_position_42> synthesized.
-
-Synthesizing Unit <shift_cursor_21>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_cursor_21.v".
-    Found 25-bit 4-to-1 multiplexer for signal <out_temp> created at line 37.
-    Summary:
-	inferred   2 Multiplexer(s).
-Unit <shift_cursor_21> synthesized.
-
-Synthesizing Unit <get_neighbours_test_37>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_neighbours_test_37.v".
+Synthesizing Unit <get_neighbours_37>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_neighbours_37.v".
     Found 25-bit register for signal <M_up_temp_q>.
     Found 25-bit register for signal <M_down_temp_q>.
     Found 25-bit register for signal <M_left_temp_q>.
@@ -433,17 +419,30 @@ Synthesizing Unit <get_neighbours_test_37>.
 	inferred   1 Adder/Subtractor(s).
 	inferred 107 D-type flip-flop(s).
 	inferred   4 Multiplexer(s).
-Unit <get_neighbours_test_37> synthesized.
+Unit <get_neighbours_37> synthesized.
 
-Synthesizing Unit <decimal2_22>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_22.v".
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_28_OUT<3:0>> created at line 54.
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_31_OUT<3:0>> created at line 58.
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_10_OUT<3:0>> created at line 30.
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_13_OUT<3:0>> created at line 34.
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_16_OUT<3:0>> created at line 38.
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_19_OUT<3:0>> created at line 42.
-    Found 4-bit subtractor for signal <a[7]_GND_21_o_sub_22_OUT<3:0>> created at line 46.
+Synthesizing Unit <get_position_22>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/get_position_22.v".
+    Summary:
+	no macro.
+Unit <get_position_22> synthesized.
+
+Synthesizing Unit <shift_cursor_21>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/shift_cursor_21.v".
+    Found 25-bit 4-to-1 multiplexer for signal <out_temp> created at line 37.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <shift_cursor_21> synthesized.
+
+Synthesizing Unit <decimal2_23>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/decimal2_23.v".
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_28_OUT<3:0>> created at line 54.
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_31_OUT<3:0>> created at line 58.
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_10_OUT<3:0>> created at line 30.
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_13_OUT<3:0>> created at line 34.
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_16_OUT<3:0>> created at line 38.
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_19_OUT<3:0>> created at line 42.
+    Found 4-bit subtractor for signal <a[7]_GND_20_o_sub_22_OUT<3:0>> created at line 46.
     Found 8-bit comparator greater for signal <n0000> created at line 16
     Found 8-bit comparator greater for signal <n0003> created at line 20
     Found 8-bit comparator greater for signal <n0008> created at line 24
@@ -459,14 +458,14 @@ Synthesizing Unit <decimal2_22>.
 	inferred   7 Adder/Subtractor(s).
 	inferred  11 Comparator(s).
 	inferred  20 Multiplexer(s).
-Unit <decimal2_22> synthesized.
+Unit <decimal2_23> synthesized.
 
-Synthesizing Unit <seven_seg_24>.
-    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/seven_seg_24.v".
+Synthesizing Unit <seven_seg_25>.
+    Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/seven_seg_25.v".
     Found 32x8-bit Read Only RAM for signal <segs>
     Summary:
 	inferred   1 RAM(s).
-Unit <seven_seg_24> synthesized.
+Unit <seven_seg_25> synthesized.
 
 Synthesizing Unit <counter_3>.
     Related source file is "D:/50.002-Computation-Structure/InSyncGit/work/planAhead/InSync/InSync.srcs/sources_1/imports/verilog/counter_3.v".
@@ -487,10 +486,10 @@ Macro Statistics
  4x4-bit single-port Read Only RAM                     : 1
 # Multipliers                                          : 2
  25x25-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 78
+# Adders/Subtractors                                   : 79
  2-bit adder                                           : 1
  20-bit adder                                          : 8
- 25-bit adder                                          : 1
+ 25-bit adder                                          : 2
  25-bit subtractor                                     : 2
  26-bit adder                                          : 2
  27-bit adder                                          : 2
@@ -519,11 +518,11 @@ Macro Statistics
  49-bit adder                                          : 2
  50-bit adder                                          : 2
  8-bit adder                                           : 1
-# Registers                                            : 36
+# Registers                                            : 38
  1-bit register                                        : 7
  2-bit register                                        : 9
  20-bit register                                       : 8
- 25-bit register                                       : 7
+ 25-bit register                                       : 9
  34-bit register                                       : 1
  4-bit register                                        : 1
  5-bit register                                        : 1
@@ -557,12 +556,12 @@ Macro Statistics
  50-bit comparator lessequal                           : 1
  8-bit comparator greater                              : 20
  8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 667
- 1-bit 2-to-1 multiplexer                              : 601
+# Multiplexers                                         : 697
+ 1-bit 2-to-1 multiplexer                              : 626
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 1
  2-bit 2-to-1 multiplexer                              : 1
- 25-bit 2-to-1 multiplexer                             : 17
+ 25-bit 2-to-1 multiplexer                             : 22
  25-bit 4-to-1 multiplexer                             : 3
  4-bit 2-to-1 multiplexer                              : 40
  8-bit 2-to-1 multiplexer                              : 2
@@ -598,7 +597,7 @@ Synthesizing (advanced) Unit <counter_3>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <counter_3> synthesized (advanced).
 
-Synthesizing (advanced) Unit <get_neighbours_test_37>.
+Synthesizing (advanced) Unit <get_neighbours_37>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0099> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
@@ -611,7 +610,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0099> will be implemented on LUTs 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-Unit <get_neighbours_test_37> synthesized (advanced).
+Unit <get_neighbours_37> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_io_sel> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -628,10 +627,11 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_io_sel> will be implemented on LUTs 
 Unit <mojo_top_0> synthesized (advanced).
 
 Synthesizing (advanced) Unit <processor_2>.
+The following registers are absorbed into counter <M_blink_q>: 1 register on signal <M_blink_q>.
 The following registers are absorbed into counter <M_current_score_q>: 1 register on signal <M_current_score_q>.
 Unit <processor_2> synthesized (advanced).
 
-Synthesizing (advanced) Unit <seven_seg_24>.
+Synthesizing (advanced) Unit <seven_seg_25>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -643,7 +643,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs ei
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <segs>          |          |
     -----------------------------------------------------------------------
-Unit <seven_seg_24> synthesized (advanced).
+Unit <seven_seg_25> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -660,13 +660,14 @@ Macro Statistics
  25-bit adder carry in                                 : 25
  25-bit subtractor                                     : 2
  4-bit subtractor                                      : 14
-# Counters                                             : 11
+# Counters                                             : 12
  2-bit up counter                                      : 1
  20-bit up counter                                     : 8
+ 25-bit up counter                                     : 1
  34-bit up counter                                     : 1
  8-bit up counter                                      : 1
-# Registers                                            : 215
- Flip-Flops                                            : 215
+# Registers                                            : 240
+ Flip-Flops                                            : 240
 # Comparators                                          : 48
  25-bit comparator lessequal                           : 1
  26-bit comparator lessequal                           : 1
@@ -696,12 +697,12 @@ Macro Statistics
  50-bit comparator lessequal                           : 1
  8-bit comparator greater                              : 20
  8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 666
- 1-bit 2-to-1 multiplexer                              : 601
+# Multiplexers                                         : 696
+ 1-bit 2-to-1 multiplexer                              : 626
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 1
  2-bit 2-to-1 multiplexer                              : 1
- 25-bit 2-to-1 multiplexer                             : 17
+ 25-bit 2-to-1 multiplexer                             : 22
  25-bit 4-to-1 multiplexer                             : 3
  4-bit 2-to-1 multiplexer                              : 40
  8-bit 2-to-1 multiplexer                              : 1
@@ -720,34 +721,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <M_direction_q_0> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_direction_q_1> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_0> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_1> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_2> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_3> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_4> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_5> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_6> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_7> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_8> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_9> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_10> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_11> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_12> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_13> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_14> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_15> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_16> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_17> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_18> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_19> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_20> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_21> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_22> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_23> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2677 - Node <M_current_cursor_q_24> of sequential type is unconnected in block <processor_2>.
-WARNING:Xst:2973 - All outputs of instance <shift_cursor/get_neighbours> of block <get_neighbours_test_37> are unconnected in block <processor_2>. Underlying logic will be removed.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <processor/FSM_0> on signal <M_state_q[1:3]> with user encoding.
 -------------------
@@ -761,30 +734,23 @@ Optimizing FSM <processor/FSM_0> on signal <M_state_q[1:3]> with user encoding.
  100   | 100
  110   | 110
 -------------------
-WARNING:Xst:2677 - Node <Mmult_n00323> of sequential type is unconnected in block <adder_38>.
-WARNING:Xst:2677 - Node <Mmult_n00343> of sequential type is unconnected in block <adder_38>.
-WARNING:Xst:2973 - All outputs of instance <alu/boole> of block <boole_40> are unconnected in block <get_neighbours_test_37>. Underlying logic will be removed.
-WARNING:Xst:2973 - All outputs of instance <alu/adder> of block <adder_38> are unconnected in block <get_neighbours_test_37>. Underlying logic will be removed.
+WARNING:Xst:2677 - Node <Mmult_n00323> of sequential type is unconnected in block <adder_39>.
+WARNING:Xst:2677 - Node <Mmult_n00343> of sequential type is unconnected in block <adder_39>.
+WARNING:Xst:2973 - All outputs of instance <alu/boole> of block <boole_41> are unconnected in block <get_neighbours_37>. Underlying logic will be removed.
+WARNING:Xst:2973 - All outputs of instance <alu/adder> of block <adder_39> are unconnected in block <get_neighbours_37>. Underlying logic will be removed.
 
 Optimizing unit <mojo_top_0> ...
 
 Optimizing unit <processor_2> ...
 
-Optimizing unit <get_neighbours_test_37> ...
+Optimizing unit <get_neighbours_37> ...
 
-Optimizing unit <adder_38> ...
+Optimizing unit <adder_39> ...
 
 Optimizing unit <div_25u_25u> ...
 
-Optimizing unit <decimal2_22> ...
-WARNING:Xst:1293 - FF/Latch <processor/M_old_map_q_24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_23> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_22> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_21> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_20> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_19> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_18> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+Optimizing unit <decimal2_23> ...
+WARNING:Xst:1293 - FF/Latch <processor/M_old_map_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
@@ -800,6 +766,20 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_down_temp_q_24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_down_temp_q_23> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_down_temp_q_22> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_right_temp_q_24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_right_temp_q_23> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_right_temp_q_22> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_right_temp_q_21> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current_map_q_24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current_map_q_23> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current_map_q_22> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
@@ -823,10 +803,37 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current_map_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current_map_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_current_map_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_23> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_22> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_21> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_20> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_19> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <processor/M_old_map_q_18> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/M_blink_q_0> <processor/shift_cursor/get_neighbours/M_ctr_q_0> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/M_blink_q_1> <processor/shift_cursor/get_neighbours/M_ctr_q_1> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_2> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_3> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_4> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_5> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_6> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_7> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_8> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_9> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_10> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_11> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_12> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_13> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_14> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_15> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_16> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_17> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_18> 
+INFO:Xst:2261 - The FF/Latch <seven_seg_ctr/M_ctr_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/M_blink_q_19> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 7.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 14.
 
 Final Macro Processing ...
 
@@ -845,8 +852,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 228
- Flip-Flops                                            : 228
+# Registers                                            : 376
+ Flip-Flops                                            : 376
 # Shift Registers                                      : 7
  2-bit shift register                                  : 7
 
@@ -871,25 +878,26 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 771
+# BELS                             : 1203
 #      GND                         : 19
-#      INV                         : 17
-#      LUT1                        : 185
-#      LUT2                        : 25
-#      LUT3                        : 8
-#      LUT4                        : 5
-#      LUT5                        : 31
-#      LUT6                        : 63
-#      MUXCY                       : 192
-#      MUXF7                       : 7
-#      VCC                         : 17
-#      XORCY                       : 202
-# FlipFlops/Latches                : 235
+#      INV                         : 18
+#      LUT1                        : 209
+#      LUT2                        : 30
+#      LUT3                        : 62
+#      LUT4                        : 25
+#      LUT5                        : 168
+#      LUT6                        : 213
+#      MUXCY                       : 216
+#      MUXF7                       : 17
+#      VCC                         : 19
+#      XORCY                       : 207
+# FlipFlops/Latches                : 383
 #      FD                          : 7
 #      FDE                         : 7
-#      FDR                         : 57
-#      FDRE                        : 160
+#      FDR                         : 69
+#      FDRE                        : 294
 #      FDS                         : 4
+#      FDSE                        : 2
 # Shift Registers                  : 7
 #      SRLC16E                     : 7
 # Clock Buffers                    : 1
@@ -906,18 +914,18 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             235  out of  11440     2%  
- Number of Slice LUTs:                  341  out of   5720     5%  
-    Number used as Logic:               334  out of   5720     5%  
+ Number of Slice Registers:             383  out of  11440     3%  
+ Number of Slice LUTs:                  732  out of   5720    12%  
+    Number used as Logic:               725  out of   5720    12%  
     Number used as Memory:                7  out of   1440     0%  
        Number used as SRL:                7
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    354
-   Number with an unused Flip Flop:     119  out of    354    33%  
-   Number with an unused LUT:            13  out of    354     3%  
-   Number of fully used LUT-FF pairs:   222  out of    354    62%  
-   Number of unique control sets:        29
+ Number of LUT Flip Flop pairs used:    861
+   Number with an unused Flip Flop:     478  out of    861    55%  
+   Number with an unused LUT:           129  out of    861    14%  
+   Number of fully used LUT-FF pairs:   254  out of    861    29%  
+   Number of unique control sets:        36
 
 IO Utilization: 
  Number of IOs:                          89
@@ -947,7 +955,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 242   |
+clk                                | BUFGP                  | 390   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -958,9 +966,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.570ns (Maximum Frequency: 179.533MHz)
+   Minimum period: 7.290ns (Maximum Frequency: 137.174MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 9.471ns
+   Maximum output required time after clock: 23.061ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -969,29 +977,31 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.570ns (frequency: 179.533MHz)
-  Total number of paths / destination ports: 6262 / 611
+  Clock period: 7.290ns (frequency: 137.174MHz)
+  Total number of paths / destination ports: 24819 / 1043
 -------------------------------------------------------------------------
-Delay:               5.570ns (Levels of Logic = 5)
-  Source:            processor/start_btn_cond/M_ctr_q_3 (FF)
-  Destination:       processor/M_state_q_FSM_FFd2 (FF)
+Delay:               7.290ns (Levels of Logic = 6)
+  Source:            processor/shift_cursor/get_neighbours/M_cursor_position_q_2 (FF)
+  Destination:       processor/M_next_cursor_q_20 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: processor/start_btn_cond/M_ctr_q_3 to processor/M_state_q_FSM_FFd2
+  Data Path: processor/shift_cursor/get_neighbours/M_cursor_position_q_2 to processor/M_next_cursor_q_20
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.525   1.181  M_ctr_q_3 (M_ctr_q_3)
-     LUT6:I0->O            3   0.254   0.994  out1 (processor/start_btn_cond/out)
-     LUT5:I2->O            4   0.235   0.912  out4 (out)
-     end scope: 'processor/start_btn_cond:out'
-     LUT6:I4->O            1   0.250   0.910  M_state_q_FSM_FFd2-In1 (M_state_q_FSM_FFd2-In1)
-     LUT6:I3->O            1   0.235   0.000  M_state_q_FSM_FFd2-In4 (M_state_q_FSM_FFd2-In)
-     FDR:D                     0.074          M_state_q_FSM_FFd2
+     FDR:C->Q              8   0.525   1.374  M_cursor_position_q_2 (M_cursor_position_q_2)
+     LUT5:I0->O           10   0.254   1.008  _n00871_1 (_n00871)
+     end scope: 'processor/shift_cursor/get_neighbours:_n00871'
+     LUT6:I5->O            4   0.254   1.259  Mmux_out_temp181 (out_temp<2>)
+     LUT6:I0->O           13   0.254   1.098  direction[1]_GND_19_o_equal_2_o<24>4 (direction[1]_GND_19_o_equal_2_o<24>3)
+     LUT5:I4->O            1   0.254   0.682  Mmux_out26_SW1 (N48)
+     LUT6:I5->O            2   0.254   0.000  Mmux_out26 (out<10>)
+     end scope: 'processor/shift_cursor:out<10>'
+     FDRE:D                    0.074          M_next_cursor_q_10
     ----------------------------------------
-    Total                      5.570ns (1.573ns logic, 3.997ns route)
-                                       (28.2% logic, 71.8% route)
+    Total                      7.290ns (1.869ns logic, 5.421ns route)
+                                       (25.6% logic, 74.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -1016,30 +1026,41 @@ Offset:              3.526ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 850 / 14
+  Total number of paths / destination ports: 15217700 / 37
 -------------------------------------------------------------------------
-Offset:              9.471ns (Levels of Logic = 8)
-  Source:            processor/M_current_score_q_3 (FF)
-  Destination:       io_seg<7> (PAD)
+Offset:              23.061ns (Levels of Logic = 18)
+  Source:            processor/shift_cursor/get_neighbours/M_cursor_position_q_2 (FF)
+  Destination:       io_led<17> (PAD)
   Source Clock:      clk rising
 
-  Data Path: processor/M_current_score_q_3 to io_seg<7>
+  Data Path: processor/shift_cursor/get_neighbours/M_cursor_position_q_2 to io_led<17>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            10   0.525   1.236  M_current_score_q_3 (M_current_score_q_3)
-     begin scope: 'processor/decimal_score:a<3>'
-     LUT3:I0->O            1   0.235   0.910  Mmux_out02_SW0 (N7)
-     LUT6:I3->O            7   0.235   1.340  Mmux_out02 (out0<0>)
-     end scope: 'processor/decimal_score:out0<0>'
-     LUT5:I0->O            1   0.254   0.682  display_seg0<4>1 (display_seg0<4>)
-     end scope: 'processor:display_seg0<4>'
-     LUT6:I5->O            1   0.254   0.000  Mmux_io_seg51_F (N31)
-     MUXF7:I0->O           2   0.163   0.725  Mmux_io_seg51 (io_seg_4_OBUF)
-     OBUF:I->O                 2.912          io_seg_4_OBUF (io_seg<4>)
+     FDR:C->Q              8   0.525   1.374  M_cursor_position_q_2 (M_cursor_position_q_2)
+     LUT5:I0->O           10   0.254   1.008  _n00871_1 (_n00871)
+     end scope: 'processor/shift_cursor/get_neighbours:_n00871'
+     LUT6:I5->O            4   0.254   1.259  Mmux_out_temp181 (out_temp<2>)
+     LUT6:I0->O           13   0.254   1.098  direction[1]_GND_19_o_equal_2_o<24>4 (direction[1]_GND_19_o_equal_2_o<24>3)
+     LUT5:I4->O            1   0.254   0.682  Mmux_out201_SW1 (N81)
+     LUT6:I5->O            2   0.254   0.726  Mmux_out201 (out<4>)
+     end scope: 'processor/shift_cursor:out<4>'
+     LUT5:I4->O            5   0.254   1.296  Mmux_out_temp201 (out_temp<4>)
+     begin scope: 'processor/get_position:cursor<4>'
+     LUT6:I0->O            3   0.254   1.196  cursor[24]_GND_18_o_equal_24_o<24>211 (cursor[24]_GND_18_o_equal_24_o<24>21)
+     LUT6:I1->O            4   0.254   1.259  pos<1>21 (pos<1>2)
+     LUT6:I0->O            3   0.254   1.042  cursor[24]_GND_18_o_equal_20_o<24>2 (cursor[24]_GND_18_o_equal_20_o<24>2)
+     LUT4:I0->O            2   0.254   1.181  cursor[24]_GND_18_o_equal_20_o<24>1 (cursor[24]_GND_18_o_equal_20_o)
+     LUT6:I0->O            2   0.254   0.726  pos<5>3 (pos<5>3)
+     LUT5:I4->O            1   0.254   0.682  pos<5>6_SW0 (N175)
+     LUT6:I5->O           25   0.254   1.858  pos<5>6 (pos<0>)
+     end scope: 'processor/get_position:pos<0>'
+     LUT6:I0->O            1   0.254   0.681  Mmux_out<9>11 (out<9>)
+     end scope: 'processor:out<9>'
+     OBUF:I->O                 2.912          io_led_9_OBUF (io_led<9>)
     ----------------------------------------
-    Total                      9.471ns (4.578ns logic, 4.893ns route)
-                                       (48.3% logic, 51.7% route)
+    Total                     23.061ns (6.993ns logic, 16.068ns route)
+                                       (30.3% logic, 69.7% route)
 
 =========================================================================
 
@@ -1051,20 +1072,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.570|         |         |         |
+clk            |    7.290|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 16.78 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 20.42 secs
  
 --> 
 
-Total memory usage is 333748 kilobytes
+Total memory usage is 335248 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  108 (   0 filtered)
-Number of infos    :    7 (   0 filtered)
+Number of warnings :   94 (   0 filtered)
+Number of infos    :   27 (   0 filtered)
 

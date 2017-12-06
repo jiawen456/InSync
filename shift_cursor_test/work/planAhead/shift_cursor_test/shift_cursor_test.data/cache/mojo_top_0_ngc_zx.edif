@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2017 12 6 16 1 36)
+      (timestamp 2017 12 6 16 21 40)
       (program "Xilinx ngc2edif" (version "P.20131013"))
       (author "Xilinx. Inc ")
       (comment "This EDIF netlist is to be used within supported synthesis tools")
@@ -22,7 +22,7 @@
             (port P
               (direction OUTPUT)
               (property PIN_BUSNAME (string "out<1:4>") (owner "Xilinx"))
-              (property PIN_BUSIDX (integer 3) (owner "Xilinx"))
+              (property PIN_BUSIDX (integer -1) (owner "Xilinx"))
             )
           )
       )
@@ -2265,7 +2265,7 @@
           )
       )
     )
-    (cell (rename get_neighbours_test_21_get_neighbours "get_neighbours_test_21")
+    (cell (rename get_neighbours_21_get_neighbours "get_neighbours_21")
       (cellType GENERIC)
         (view view_1
           (viewType NETLIST)
@@ -5166,11 +5166,11 @@
               (property INIT (string "0000000000000001") (owner "Xilinx"))
             )
             (instance get_neighbours
-              (viewRef view_1 (cellRef get_neighbours_test_21_get_neighbours (libraryRef mojo_top_0_lib)))
+              (viewRef view_1 (cellRef get_neighbours_21_get_neighbours (libraryRef mojo_top_0_lib)))
               (property BUS_INFO (string "25:INPUT:cursor<24:0>") (owner "Xilinx"))
               (property NLW_UNIQUE_ID (integer 0) (owner "Xilinx"))
               (property NLW_MACRO_TAG (integer 20) (owner "Xilinx"))
-              (property NLW_MACRO_ALIAS (string "get_neighbours_test_21_get_neighbours") (owner "Xilinx"))
+              (property NLW_MACRO_ALIAS (string "get_neighbours_21_get_neighbours") (owner "Xilinx"))
             )
             (net M_right_temp_q_2
               (joined
@@ -14833,9 +14833,9 @@
               (property INIT (string "0") (owner "Xilinx"))
             )
             (instance M_current_cursor_q_4
-              (viewRef view_1 (cellRef FDSE (libraryRef UNISIMS)))
+              (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
-              (property INIT (string "1") (owner "Xilinx"))
+              (property INIT (string "0") (owner "Xilinx"))
             )
             (instance M_current_cursor_q_3
               (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
@@ -14853,9 +14853,9 @@
               (property INIT (string "0") (owner "Xilinx"))
             )
             (instance M_current_cursor_q_0
-              (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
+              (viewRef view_1 (cellRef FDSE (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
-              (property INIT (string "0") (owner "Xilinx"))
+              (property INIT (string "1") (owner "Xilinx"))
             )
             (instance M_next_cursor_q_24
               (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
@@ -14953,9 +14953,9 @@
               (property INIT (string "0") (owner "Xilinx"))
             )
             (instance M_next_cursor_q_5
-              (viewRef view_1 (cellRef FDSE (libraryRef UNISIMS)))
+              (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
-              (property INIT (string "1") (owner "Xilinx"))
+              (property INIT (string "0") (owner "Xilinx"))
             )
             (instance M_next_cursor_q_4
               (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
@@ -14978,9 +14978,9 @@
               (property INIT (string "0") (owner "Xilinx"))
             )
             (instance M_next_cursor_q_0
-              (viewRef view_1 (cellRef FDRE (libraryRef UNISIMS)))
+              (viewRef view_1 (cellRef FDSE (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
-              (property INIT (string "0") (owner "Xilinx"))
+              (property INIT (string "1") (owner "Xilinx"))
             )
             (instance (rename Mmux_out_4_11 "Mmux_out<4>11")
               (viewRef view_1 (cellRef LUT6 (libraryRef UNISIMS)))
@@ -16148,12 +16148,12 @@
             (net rst
               (joined
                 (portRef rst)
-                (portRef R (instanceRef M_next_cursor_q_0))
+                (portRef S (instanceRef M_next_cursor_q_0))
                 (portRef R (instanceRef M_next_cursor_q_1))
                 (portRef R (instanceRef M_next_cursor_q_2))
                 (portRef R (instanceRef M_next_cursor_q_3))
                 (portRef R (instanceRef M_next_cursor_q_4))
-                (portRef S (instanceRef M_next_cursor_q_5))
+                (portRef R (instanceRef M_next_cursor_q_5))
                 (portRef R (instanceRef M_next_cursor_q_6))
                 (portRef R (instanceRef M_next_cursor_q_7))
                 (portRef R (instanceRef M_next_cursor_q_8))
@@ -16173,11 +16173,11 @@
                 (portRef R (instanceRef M_next_cursor_q_22))
                 (portRef R (instanceRef M_next_cursor_q_23))
                 (portRef R (instanceRef M_next_cursor_q_24))
-                (portRef R (instanceRef M_current_cursor_q_0))
+                (portRef S (instanceRef M_current_cursor_q_0))
                 (portRef R (instanceRef M_current_cursor_q_1))
                 (portRef R (instanceRef M_current_cursor_q_2))
                 (portRef R (instanceRef M_current_cursor_q_3))
-                (portRef S (instanceRef M_current_cursor_q_4))
+                (portRef R (instanceRef M_current_cursor_q_4))
                 (portRef R (instanceRef M_current_cursor_q_5))
                 (portRef R (instanceRef M_current_cursor_q_6))
                 (portRef R (instanceRef M_current_cursor_q_7))

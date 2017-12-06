@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Dec 06 05:47:41 2017
+// Written by: Map P.20131013 on Wed Dec 06 16:38:28 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -87,69 +87,52 @@ COMP "io_led[18]" LOCATE = SITE "P17" LEVEL 1;
 COMP "io_led[19]" LOCATE = SITE "P21" LEVEL 1;
 COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
 COMP "reset_button" LOCATE = SITE "P51" LEVEL 1;
-TIMEGRP clk = BEL "processor/M_current_score_q_7" BEL
-        "processor/M_current_score_q_6" BEL "processor/M_current_score_q_5"
-        BEL "processor/M_current_score_q_4" BEL
-        "processor/M_current_score_q_3" BEL "processor/M_current_score_q_2"
-        BEL "processor/M_current_score_q_1" BEL
-        "processor/M_current_score_q_0" BEL "processor/M_state_q_FSM_FFd1" BEL
-        "processor/M_state_q_FSM_FFd2" BEL "processor/M_state_q_FSM_FFd3" BEL
-        "processor/M_current_map_q_11" BEL "processor/M_current_map_q_1" BEL
-        "processor/M_current_highscore_q_7" BEL
-        "processor/M_current_highscore_q_6" BEL
-        "processor/M_current_highscore_q_5" BEL
-        "processor/M_current_highscore_q_4" BEL
-        "processor/M_current_highscore_q_3" BEL
-        "processor/M_current_highscore_q_2" BEL
-        "processor/M_current_highscore_q_1" BEL
-        "processor/M_current_highscore_q_0" BEL "processor/M_old_map_q_11" BEL
-        "processor/M_old_map_q_1" BEL "processor/reset_ctr/M_ctr_q_33" BEL
-        "processor/reset_ctr/M_ctr_q_32" BEL "processor/reset_ctr/M_ctr_q_31"
-        BEL "processor/reset_ctr/M_ctr_q_30" BEL
-        "processor/reset_ctr/M_ctr_q_29" BEL "processor/reset_ctr/M_ctr_q_28"
-        BEL "processor/reset_ctr/M_ctr_q_27" BEL
-        "processor/reset_ctr/M_ctr_q_26" BEL "processor/reset_ctr/M_ctr_q_25"
-        BEL "processor/reset_ctr/M_ctr_q_24" BEL
-        "processor/reset_ctr/M_ctr_q_23" BEL "processor/reset_ctr/M_ctr_q_22"
-        BEL "processor/reset_ctr/M_ctr_q_21" BEL
-        "processor/reset_ctr/M_ctr_q_20" BEL "processor/reset_ctr/M_ctr_q_19"
-        BEL "processor/reset_ctr/M_ctr_q_18" BEL
-        "processor/reset_ctr/M_ctr_q_17" BEL "processor/reset_ctr/M_ctr_q_16"
-        BEL "processor/reset_ctr/M_ctr_q_15" BEL
-        "processor/reset_ctr/M_ctr_q_14" BEL "processor/reset_ctr/M_ctr_q_13"
-        BEL "processor/reset_ctr/M_ctr_q_12" BEL
-        "processor/reset_ctr/M_ctr_q_11" BEL "processor/reset_ctr/M_ctr_q_10"
-        BEL "processor/reset_ctr/M_ctr_q_9" BEL
-        "processor/reset_ctr/M_ctr_q_8" BEL "processor/reset_ctr/M_ctr_q_7"
-        BEL "processor/reset_ctr/M_ctr_q_6" BEL
-        "processor/reset_ctr/M_ctr_q_5" BEL "processor/reset_ctr/M_ctr_q_4"
-        BEL "processor/reset_ctr/M_ctr_q_3" BEL
-        "processor/reset_ctr/M_ctr_q_2" BEL "processor/reset_ctr/M_ctr_q_1"
-        BEL "processor/reset_ctr/M_ctr_q_0" BEL
-        "processor/up_btn_cond/M_ctr_q_19" BEL
-        "processor/up_btn_cond/M_ctr_q_18" BEL
-        "processor/up_btn_cond/M_ctr_q_17" BEL
-        "processor/up_btn_cond/M_ctr_q_16" BEL
-        "processor/up_btn_cond/M_ctr_q_15" BEL
-        "processor/up_btn_cond/M_ctr_q_14" BEL
-        "processor/up_btn_cond/M_ctr_q_13" BEL
-        "processor/up_btn_cond/M_ctr_q_12" BEL
-        "processor/up_btn_cond/M_ctr_q_11" BEL
-        "processor/up_btn_cond/M_ctr_q_10" BEL
-        "processor/up_btn_cond/M_ctr_q_9" BEL
-        "processor/up_btn_cond/M_ctr_q_8" BEL
-        "processor/up_btn_cond/M_ctr_q_7" BEL
-        "processor/up_btn_cond/M_ctr_q_6" BEL
-        "processor/up_btn_cond/M_ctr_q_5" BEL
-        "processor/up_btn_cond/M_ctr_q_4" BEL
-        "processor/up_btn_cond/M_ctr_q_3" BEL
-        "processor/up_btn_cond/M_ctr_q_2" BEL
-        "processor/up_btn_cond/M_ctr_q_1" BEL
-        "processor/up_btn_cond/M_ctr_q_0" BEL
-        "processor/up_btn_cond/sync/M_pipe_q_1" BEL
-        "processor/up_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
-        "processor/left_btn_cond/M_ctr_q_19" BEL
-        "processor/left_btn_cond/M_ctr_q_18" BEL
+TIMEGRP clk = BEL "processor/down_btn_cond/M_ctr_q_19" BEL
+        "processor/down_btn_cond/M_ctr_q_18" BEL
+        "processor/down_btn_cond/M_ctr_q_17" BEL
+        "processor/down_btn_cond/M_ctr_q_16" BEL
+        "processor/down_btn_cond/M_ctr_q_15" BEL
+        "processor/down_btn_cond/M_ctr_q_14" BEL
+        "processor/down_btn_cond/M_ctr_q_13" BEL
+        "processor/down_btn_cond/M_ctr_q_12" BEL
+        "processor/down_btn_cond/M_ctr_q_11" BEL
+        "processor/down_btn_cond/M_ctr_q_10" BEL
+        "processor/down_btn_cond/M_ctr_q_9" BEL
+        "processor/down_btn_cond/M_ctr_q_8" BEL
+        "processor/down_btn_cond/M_ctr_q_7" BEL
+        "processor/down_btn_cond/M_ctr_q_6" BEL
+        "processor/down_btn_cond/M_ctr_q_5" BEL
+        "processor/down_btn_cond/M_ctr_q_4" BEL
+        "processor/down_btn_cond/M_ctr_q_3" BEL
+        "processor/down_btn_cond/M_ctr_q_2" BEL
+        "processor/down_btn_cond/M_ctr_q_1" BEL
+        "processor/down_btn_cond/M_ctr_q_0" BEL
+        "processor/down_btn_cond/sync/M_pipe_q_1" BEL
+        "processor/down_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
+        "processor/right_btn_cond/M_ctr_q_19" BEL
+        "processor/right_btn_cond/M_ctr_q_18" BEL
+        "processor/right_btn_cond/M_ctr_q_17" BEL
+        "processor/right_btn_cond/M_ctr_q_16" BEL
+        "processor/right_btn_cond/M_ctr_q_15" BEL
+        "processor/right_btn_cond/M_ctr_q_14" BEL
+        "processor/right_btn_cond/M_ctr_q_13" BEL
+        "processor/right_btn_cond/M_ctr_q_12" BEL
+        "processor/right_btn_cond/M_ctr_q_11" BEL
+        "processor/right_btn_cond/M_ctr_q_10" BEL
+        "processor/right_btn_cond/M_ctr_q_9" BEL
+        "processor/right_btn_cond/M_ctr_q_8" BEL
+        "processor/right_btn_cond/M_ctr_q_7" BEL
+        "processor/right_btn_cond/M_ctr_q_6" BEL
+        "processor/right_btn_cond/M_ctr_q_5" BEL
+        "processor/right_btn_cond/M_ctr_q_4" BEL
+        "processor/right_btn_cond/M_ctr_q_3" BEL
+        "processor/right_btn_cond/M_ctr_q_2" BEL
+        "processor/right_btn_cond/M_ctr_q_1" BEL
+        "processor/right_btn_cond/M_ctr_q_0" BEL
+        "processor/right_btn_cond/sync/M_pipe_q_1" BEL
+        "processor/right_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
+        "processor/M_current_map_q_1" BEL "processor/left_btn_cond/M_ctr_q_19"
+        BEL "processor/left_btn_cond/M_ctr_q_18" BEL
         "processor/left_btn_cond/M_ctr_q_17" BEL
         "processor/left_btn_cond/M_ctr_q_16" BEL
         "processor/left_btn_cond/M_ctr_q_15" BEL
@@ -192,6 +175,163 @@ TIMEGRP clk = BEL "processor/M_current_score_q_7" BEL
         "processor/start_btn_cond/M_ctr_q_0" BEL
         "processor/start_btn_cond/sync/M_pipe_q_1" BEL
         "processor/start_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
+        "processor/M_state_q_FSM_FFd1" BEL "processor/M_state_q_FSM_FFd2" BEL
+        "processor/M_state_q_FSM_FFd3" BEL "processor/down_btn/M_last_q" BEL
+        "processor/M_old_map_q_1" BEL "processor/left_btn/M_last_q" BEL
+        "processor/reset_btn/M_last_q" BEL "processor/M_direction_q_0" BEL
+        "processor/M_direction_q_1" BEL "processor/reset_btn_cond/M_ctr_q_19"
+        BEL "processor/reset_btn_cond/M_ctr_q_18" BEL
+        "processor/reset_btn_cond/M_ctr_q_17" BEL
+        "processor/reset_btn_cond/M_ctr_q_16" BEL
+        "processor/reset_btn_cond/M_ctr_q_15" BEL
+        "processor/reset_btn_cond/M_ctr_q_14" BEL
+        "processor/reset_btn_cond/M_ctr_q_13" BEL
+        "processor/reset_btn_cond/M_ctr_q_12" BEL
+        "processor/reset_btn_cond/M_ctr_q_11" BEL
+        "processor/reset_btn_cond/M_ctr_q_10" BEL
+        "processor/reset_btn_cond/M_ctr_q_9" BEL
+        "processor/reset_btn_cond/M_ctr_q_8" BEL
+        "processor/reset_btn_cond/M_ctr_q_7" BEL
+        "processor/reset_btn_cond/M_ctr_q_6" BEL
+        "processor/reset_btn_cond/M_ctr_q_5" BEL
+        "processor/reset_btn_cond/M_ctr_q_4" BEL
+        "processor/reset_btn_cond/M_ctr_q_3" BEL
+        "processor/reset_btn_cond/M_ctr_q_2" BEL
+        "processor/reset_btn_cond/M_ctr_q_1" BEL
+        "processor/reset_btn_cond/M_ctr_q_0" BEL
+        "processor/reset_btn_cond/sync/M_pipe_q_1" BEL
+        "processor/reset_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
+        "processor/up_btn/M_last_q" BEL "processor/reset_ctr/M_ctr_q_33" BEL
+        "processor/reset_ctr/M_ctr_q_32" BEL "processor/reset_ctr/M_ctr_q_31"
+        BEL "processor/reset_ctr/M_ctr_q_30" BEL
+        "processor/reset_ctr/M_ctr_q_29" BEL "processor/reset_ctr/M_ctr_q_28"
+        BEL "processor/reset_ctr/M_ctr_q_27" BEL
+        "processor/reset_ctr/M_ctr_q_26" BEL "processor/reset_ctr/M_ctr_q_25"
+        BEL "processor/reset_ctr/M_ctr_q_24" BEL
+        "processor/reset_ctr/M_ctr_q_23" BEL "processor/reset_ctr/M_ctr_q_22"
+        BEL "processor/reset_ctr/M_ctr_q_21" BEL
+        "processor/reset_ctr/M_ctr_q_20" BEL "processor/reset_ctr/M_ctr_q_19"
+        BEL "processor/reset_ctr/M_ctr_q_18" BEL
+        "processor/reset_ctr/M_ctr_q_17" BEL "processor/reset_ctr/M_ctr_q_16"
+        BEL "processor/reset_ctr/M_ctr_q_15" BEL
+        "processor/reset_ctr/M_ctr_q_14" BEL "processor/reset_ctr/M_ctr_q_13"
+        BEL "processor/reset_ctr/M_ctr_q_12" BEL
+        "processor/reset_ctr/M_ctr_q_11" BEL "processor/reset_ctr/M_ctr_q_10"
+        BEL "processor/reset_ctr/M_ctr_q_9" BEL
+        "processor/reset_ctr/M_ctr_q_8" BEL "processor/reset_ctr/M_ctr_q_7"
+        BEL "processor/reset_ctr/M_ctr_q_6" BEL
+        "processor/reset_ctr/M_ctr_q_5" BEL "processor/reset_ctr/M_ctr_q_4"
+        BEL "processor/reset_ctr/M_ctr_q_3" BEL
+        "processor/reset_ctr/M_ctr_q_2" BEL "processor/reset_ctr/M_ctr_q_1"
+        BEL "processor/reset_ctr/M_ctr_q_0" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_24" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_23" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_22" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_21" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_20" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_19" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_18" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_17" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_16" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_15" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_14" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_13" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_12" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_11" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_10" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_9" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_8" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_7" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_6" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_5" BEL
+        "processor/shift_cursor/get_neighbours/M_left_temp_q_4" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_21" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_20" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_19" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_18" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_17" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_16" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_15" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_14" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_13" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_12" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_11" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_10" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_9" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_8" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_7" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_6" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_5" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_4" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_3" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_2" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_1" BEL
+        "processor/shift_cursor/get_neighbours/M_down_temp_q_0" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_20" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_19" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_18" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_17" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_16" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_15" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_14" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_13" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_12" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_11" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_10" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_9" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_8" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_7" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_6" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_5" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_4" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_3" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_2" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_1" BEL
+        "processor/shift_cursor/get_neighbours/M_right_temp_q_0" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_24" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_23" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_22" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_21" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_20" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_19" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_18" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_17" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_16" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_15" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_14" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_13" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_12" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_11" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_10" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_9" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_8" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_7" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_6" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_5" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_4" BEL
+        "processor/shift_cursor/get_neighbours/M_up_temp_q_3" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_4" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_3" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_2" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_0" BEL
+        "processor/M_current_score_q_0" BEL "processor/M_current_score_q_1"
+        BEL "processor/start_btn/M_last_q" BEL "processor/M_current_score_q_2"
+        BEL "processor/M_current_score_q_3" BEL
+        "processor/M_current_score_q_4" BEL "processor/M_current_score_q_5"
+        BEL "processor/M_current_score_q_6" BEL
+        "processor/M_current_score_q_7" BEL "processor/enter_btn/M_last_q" BEL
+        "processor/M_next_cursor_q_10" BEL "processor/M_next_cursor_q_11" BEL
+        "processor/M_next_cursor_q_12" BEL "processor/M_blink_q_20" BEL
+        "processor/M_next_cursor_q_13" BEL "processor/M_blink_q_21" BEL
+        "processor/M_next_cursor_q_14" BEL "processor/M_blink_q_22" BEL
+        "processor/M_next_cursor_q_15" BEL "processor/M_next_cursor_q_20" BEL
+        "processor/M_blink_q_23" BEL "processor/M_next_cursor_q_16" BEL
+        "processor/M_next_cursor_q_21" BEL "processor/M_blink_q_24" BEL
+        "processor/M_next_cursor_q_17" BEL "processor/M_next_cursor_q_22" BEL
+        "processor/M_next_cursor_q_23" BEL "processor/M_next_cursor_q_18" BEL
+        "processor/M_next_cursor_q_24" BEL "processor/M_next_cursor_q_19" BEL
+        "processor/M_current_map_q_11" BEL "processor/M_old_map_q_11" BEL
         "processor/enter_btn_cond/M_ctr_q_19" BEL
         "processor/enter_btn_cond/M_ctr_q_18" BEL
         "processor/enter_btn_cond/M_ctr_q_17" BEL
@@ -214,76 +354,64 @@ TIMEGRP clk = BEL "processor/M_current_score_q_7" BEL
         "processor/enter_btn_cond/M_ctr_q_0" BEL
         "processor/enter_btn_cond/sync/M_pipe_q_1" BEL
         "processor/enter_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
-        "processor/reset_btn_cond/M_ctr_q_19" BEL
-        "processor/reset_btn_cond/M_ctr_q_18" BEL
-        "processor/reset_btn_cond/M_ctr_q_17" BEL
-        "processor/reset_btn_cond/M_ctr_q_16" BEL
-        "processor/reset_btn_cond/M_ctr_q_15" BEL
-        "processor/reset_btn_cond/M_ctr_q_14" BEL
-        "processor/reset_btn_cond/M_ctr_q_13" BEL
-        "processor/reset_btn_cond/M_ctr_q_12" BEL
-        "processor/reset_btn_cond/M_ctr_q_11" BEL
-        "processor/reset_btn_cond/M_ctr_q_10" BEL
-        "processor/reset_btn_cond/M_ctr_q_9" BEL
-        "processor/reset_btn_cond/M_ctr_q_8" BEL
-        "processor/reset_btn_cond/M_ctr_q_7" BEL
-        "processor/reset_btn_cond/M_ctr_q_6" BEL
-        "processor/reset_btn_cond/M_ctr_q_5" BEL
-        "processor/reset_btn_cond/M_ctr_q_4" BEL
-        "processor/reset_btn_cond/M_ctr_q_3" BEL
-        "processor/reset_btn_cond/M_ctr_q_2" BEL
-        "processor/reset_btn_cond/M_ctr_q_1" BEL
-        "processor/reset_btn_cond/M_ctr_q_0" BEL
-        "processor/reset_btn_cond/sync/M_pipe_q_1" BEL
-        "processor/reset_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
-        "processor/right_btn_cond/M_ctr_q_19" BEL
-        "processor/right_btn_cond/M_ctr_q_18" BEL
-        "processor/right_btn_cond/M_ctr_q_17" BEL
-        "processor/right_btn_cond/M_ctr_q_16" BEL
-        "processor/right_btn_cond/M_ctr_q_15" BEL
-        "processor/right_btn_cond/M_ctr_q_14" BEL
-        "processor/right_btn_cond/M_ctr_q_13" BEL
-        "processor/right_btn_cond/M_ctr_q_12" BEL
-        "processor/right_btn_cond/M_ctr_q_11" BEL
-        "processor/right_btn_cond/M_ctr_q_10" BEL
-        "processor/right_btn_cond/M_ctr_q_9" BEL
-        "processor/right_btn_cond/M_ctr_q_8" BEL
-        "processor/right_btn_cond/M_ctr_q_7" BEL
-        "processor/right_btn_cond/M_ctr_q_6" BEL
-        "processor/right_btn_cond/M_ctr_q_5" BEL
-        "processor/right_btn_cond/M_ctr_q_4" BEL
-        "processor/right_btn_cond/M_ctr_q_3" BEL
-        "processor/right_btn_cond/M_ctr_q_2" BEL
-        "processor/right_btn_cond/M_ctr_q_1" BEL
-        "processor/right_btn_cond/M_ctr_q_0" BEL
-        "processor/right_btn_cond/sync/M_pipe_q_1" BEL
-        "processor/right_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
-        "processor/down_btn_cond/M_ctr_q_19" BEL
-        "processor/down_btn_cond/M_ctr_q_18" BEL
-        "processor/down_btn_cond/M_ctr_q_17" BEL
-        "processor/down_btn_cond/M_ctr_q_16" BEL
-        "processor/down_btn_cond/M_ctr_q_15" BEL
-        "processor/down_btn_cond/M_ctr_q_14" BEL
-        "processor/down_btn_cond/M_ctr_q_13" BEL
-        "processor/down_btn_cond/M_ctr_q_12" BEL
-        "processor/down_btn_cond/M_ctr_q_11" BEL
-        "processor/down_btn_cond/M_ctr_q_10" BEL
-        "processor/down_btn_cond/M_ctr_q_9" BEL
-        "processor/down_btn_cond/M_ctr_q_8" BEL
-        "processor/down_btn_cond/M_ctr_q_7" BEL
-        "processor/down_btn_cond/M_ctr_q_6" BEL
-        "processor/down_btn_cond/M_ctr_q_5" BEL
-        "processor/down_btn_cond/M_ctr_q_4" BEL
-        "processor/down_btn_cond/M_ctr_q_3" BEL
-        "processor/down_btn_cond/M_ctr_q_2" BEL
-        "processor/down_btn_cond/M_ctr_q_1" BEL
-        "processor/down_btn_cond/M_ctr_q_0" BEL
-        "processor/down_btn_cond/sync/M_pipe_q_1" BEL
-        "processor/down_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
-        "processor/left_btn/M_last_q" BEL "processor/down_btn/M_last_q" BEL
-        "processor/reset_btn/M_last_q" BEL "processor/enter_btn/M_last_q" BEL
-        "processor/start_btn/M_last_q" BEL "processor/up_btn/M_last_q" BEL
-        "processor/right_btn/M_last_q" BEL "clk_BUFGP/BUFG" BEL
+        "processor/M_next_cursor_q_0" BEL "processor/M_next_cursor_q_1" BEL
+        "processor/M_next_cursor_q_2" BEL "processor/M_next_cursor_q_3" BEL
+        "processor/M_next_cursor_q_4" BEL "processor/M_next_cursor_q_5" BEL
+        "processor/M_next_cursor_q_6" BEL "processor/M_next_cursor_q_7" BEL
+        "processor/M_next_cursor_q_8" BEL "processor/M_next_cursor_q_9" BEL
+        "processor/right_btn/M_last_q" BEL "processor/up_btn_cond/M_ctr_q_19"
+        BEL "processor/up_btn_cond/M_ctr_q_18" BEL
+        "processor/up_btn_cond/M_ctr_q_17" BEL
+        "processor/up_btn_cond/M_ctr_q_16" BEL
+        "processor/up_btn_cond/M_ctr_q_15" BEL
+        "processor/up_btn_cond/M_ctr_q_14" BEL
+        "processor/up_btn_cond/M_ctr_q_13" BEL
+        "processor/up_btn_cond/M_ctr_q_12" BEL
+        "processor/up_btn_cond/M_ctr_q_11" BEL
+        "processor/up_btn_cond/M_ctr_q_10" BEL
+        "processor/up_btn_cond/M_ctr_q_9" BEL
+        "processor/up_btn_cond/M_ctr_q_8" BEL
+        "processor/up_btn_cond/M_ctr_q_7" BEL
+        "processor/up_btn_cond/M_ctr_q_6" BEL
+        "processor/up_btn_cond/M_ctr_q_5" BEL
+        "processor/up_btn_cond/M_ctr_q_4" BEL
+        "processor/up_btn_cond/M_ctr_q_3" BEL
+        "processor/up_btn_cond/M_ctr_q_2" BEL
+        "processor/up_btn_cond/M_ctr_q_1" BEL
+        "processor/up_btn_cond/M_ctr_q_0" BEL
+        "processor/up_btn_cond/sync/M_pipe_q_1" BEL
+        "processor/up_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
+        "processor/M_current_cursor_q_10" BEL
+        "processor/M_current_cursor_q_11" BEL
+        "processor/M_current_cursor_q_12" BEL
+        "processor/M_current_cursor_q_13" BEL
+        "processor/M_current_cursor_q_14" BEL
+        "processor/M_current_cursor_q_20" BEL
+        "processor/M_current_cursor_q_15" BEL
+        "processor/M_current_cursor_q_16" BEL
+        "processor/M_current_cursor_q_21" BEL
+        "processor/M_current_cursor_q_22" BEL
+        "processor/M_current_cursor_q_17" BEL
+        "processor/M_current_cursor_q_23" BEL
+        "processor/M_current_cursor_q_18" BEL
+        "processor/M_current_cursor_q_24" BEL
+        "processor/M_current_cursor_q_19" BEL
+        "processor/M_current_highscore_q_0" BEL
+        "processor/M_current_highscore_q_1" BEL
+        "processor/M_current_cursor_q_0" BEL
+        "processor/M_current_highscore_q_2" BEL
+        "processor/M_current_cursor_q_1" BEL
+        "processor/M_current_highscore_q_3" BEL
+        "processor/M_current_cursor_q_2" BEL
+        "processor/M_current_highscore_q_4" BEL
+        "processor/M_current_highscore_q_5" BEL
+        "processor/M_current_cursor_q_3" BEL "processor/M_current_cursor_q_4"
+        BEL "processor/M_current_highscore_q_6" BEL
+        "processor/M_current_cursor_q_5" BEL
+        "processor/M_current_highscore_q_7" BEL
+        "processor/M_current_cursor_q_6" BEL "processor/M_current_cursor_q_7"
+        BEL "processor/M_current_cursor_q_8" BEL
+        "processor/M_current_cursor_q_9" BEL "clk_BUFGP/BUFG" BEL
         "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
         "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" BEL
         "seven_seg_ctr/M_ctr_q_0" BEL "seven_seg_ctr/M_ctr_q_1" BEL

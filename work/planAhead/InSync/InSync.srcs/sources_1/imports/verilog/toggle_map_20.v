@@ -33,7 +33,7 @@ module toggle_map_20 (
   reg [25-1:0] M_alu_a;
   reg [25-1:0] M_alu_b;
   reg [6-1:0] M_alu_alufn;
-  alu_35 alu (
+  alu_36 alu (
     .a(M_alu_a),
     .b(M_alu_b),
     .alufn(M_alu_alufn),
@@ -45,7 +45,7 @@ module toggle_map_20 (
   wire [25-1:0] M_get_neighbours_left;
   wire [25-1:0] M_get_neighbours_right;
   reg [25-1:0] M_get_neighbours_cursor;
-  get_neighbours_36 get_neighbours (
+  get_neighbours_37 get_neighbours (
     .clk(clk),
     .rst(rst),
     .cursor(M_get_neighbours_cursor),

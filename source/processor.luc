@@ -12,6 +12,7 @@ module processor (
   ) {
   
   sig completed;
+  sig out_temp[25];
   sig pos[25];
   
   .clk(clk) {
@@ -44,9 +45,11 @@ module processor (
       
       dff old_map[25];
       dff current_map[25];
-      dff current_cursor[25];
       dff current_score[8];
       dff current_highscore[8];
+      
+      dff current_cursor[25](#INIT(25b1));
+      dff next_cursor[25](#INIT(25b1));
       dff direction[2];
       
       gen_map_temp gen_map;
@@ -55,6 +58,8 @@ module processor (
       
     }
   }
+  
+  get_position get_position;
   
   decimal2 decimal_score;
   decimal2 decimal_highscore;
@@ -105,6 +110,9 @@ module processor (
     current_score.d = current_score.q;
     current_highscore.d = current_highscore.q;
     direction.d = direction.q;
+    next_cursor.d = next_cursor.q;
+    
+    out_temp = 25b0;
     
     case(state.q) {
       
@@ -132,6 +140,10 @@ module processor (
       //state.d = state.PLAYING;
       
       state.PLAYING:
+      
+        current_cursor.d = next_cursor.q;
+        out_temp = current_cursor.q;
+        
         if (reset_btn.out) {
           state.d = state.RESET;
         }
@@ -187,12 +199,9 @@ module processor (
         }
       
       state.CURSOR:
-        shift_cursor.direction = direction.q;
-        shift_cursor.cursor = current_cursor.q;
-        
-        current_cursor.d = shift_cursor.out;
-        out = current_cursor.q;
-        
+      
+        out_temp = shift_cursor.out;
+        next_cursor.d = out_temp;
         state.d = state.PLAYING;
       
       state.DONE:
@@ -222,10 +231,10 @@ module processor (
     }
     
     blink.d = blink.q + 1;
+    get_position.cursor = out_temp;
+    pos = get_position.pos;
     out = current_map.q;
-    //get_position.cursor = current_cursor.q;
-    //pos = get_position.pos;
-    //out[pos] = blink.q[24];
+    out[pos] = blink.q[24];
     
     sevenseg3.char = decimal_highscore.out1;
     sevenseg2.char = decimal_highscore.out0;

@@ -30,6 +30,8 @@ module mojo_top_0 (
   
   reg rst;
   
+  reg [24:0] out_temp;
+  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (
@@ -77,10 +79,12 @@ module mojo_top_0 (
     M_processor_button = io_button;
     M_processor_start_button = start_button;
     M_processor_reset_button = reset_button;
-    io_led[0+7-:8] = M_processor_out[0+7-:8];
-    io_led[8+7-:8] = M_processor_out[8+7-:8];
-    io_led[16+7-:8] = M_processor_out[16+7-:8];
-    led[0+0-:1] = M_processor_out[24+0-:1];
+    M_processor_button = io_button;
+    out_temp = M_processor_out;
+    io_led[0+7-:8] = out_temp[0+7-:8];
+    io_led[8+7-:8] = out_temp[8+7-:8];
+    io_led[16+7-:8] = out_temp[16+7-:8];
+    led[0+0-:1] = out_temp[24+0-:1];
     
     case (M_seven_seg_ctr_value)
       1'h0: begin
